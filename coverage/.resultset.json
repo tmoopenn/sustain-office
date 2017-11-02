@@ -42,43 +42,47 @@
   },
   "Cucumber Features": {
     "coverage": {
-      "/home/csvm/sustain-office/sustain/app/helpers/application_helper.rb": [
-        0,
-        0
-      ],
-      "/home/csvm/sustain-office/sustain/app/channels/application_cable/connection.rb": [
+      "/Users/Lindsey/sustain-office/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/csvm/sustain-office/sustain/app/channels/application_cable/channel.rb": [
+      "/Users/Lindsey/sustain-office/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/csvm/sustain-office/sustain/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "/home/csvm/sustain-office/sustain/app/mailers/application_mailer.rb": [
-        0,
+      "/Users/Lindsey/sustain-office/app/controllers/application_controller.rb": [
         0,
         0,
         0
       ],
-      "/home/csvm/sustain-office/sustain/app/models/application_record.rb": [
+      "/Users/Lindsey/sustain-office/app/helpers/application_helper.rb": [
+        0,
+        0
+      ],
+      "/Users/Lindsey/sustain-office/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/Lindsey/sustain-office/app/mailers/application_mailer.rb": [
+        0,
         0,
         0,
         0
       ],
-      "/home/csvm/sustain-office/sustain/app/controllers/application_controller.rb": [
+      "/Users/Lindsey/sustain-office/app/models/application_record.rb": [
         0,
+        0,
+        0
+      ],
+      "/Users/Lindsey/sustain-office/app/models/event.rb": [
         0,
         0
       ]
     },
-    "timestamp": 1509588177
+    "timestamp": 1509654394
   }
 }
