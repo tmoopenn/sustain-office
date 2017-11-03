@@ -1,10 +1,9 @@
 #main.container
-  %h3.header Main Events page
+  %h3.header Main Events Page
 
-  %table.table
+  %table.events_table
     %thead
       %tr
-        %th
         %th Title
         %th DateTime
         %th Location
@@ -17,5 +16,7 @@
           %td.title= link_to "#{event.title}", event_path(event)
           %td.date_time= "#{event.date_time}"
           %td.location= "#{event.location}"
-          %td.recurring= "#{event.recurring}"
+          %td.recurring= "#{event.recurring ? "Yes" : "No"}"
           %td.description= truncate(event.description, length: 60)
+
+  %p= link_to "Add New Event", new_event_path

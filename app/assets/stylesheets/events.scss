@@ -1,3 +1,46 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(https://fonts.googleapis.com/css?family=Sumana);
+
+$color-primary-0: #92C192;
+$color-font-0: #022015;
+$color-background-0: #DBDBD0;
+
+
+@mixin fonty($size) {
+    font-family: 'Sumana', serif;
+    font-size: $size;
+    font-weight: 200;
+    font-style: normal;
+}
+
+body{
+  font-family: 'Sumana', serif;
+  background-color: $color-background-0;
+
+  .header{
+    color: $color-font-0;
+  }
+
+  .events_table{
+    position: relative;
+    top: 10px;
+    width: 80%;
+    left: 10%;
+    background-color: $color-primary-0;
+    color: $color-font-0;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+    @include fonty(20pt);
+  }
+
+  .message {
+    color: red;
+    text-align: center;
+  }
+
+
+
+}
