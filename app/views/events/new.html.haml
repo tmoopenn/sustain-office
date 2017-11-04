@@ -1,0 +1,25 @@
+#main.container
+  %h3.header Add a New Event!
+
+  =form_tag events_path, :method => :post, :multipart=> true do
+    .field
+      =label :event, :title, 'Title'
+      =text_field :event, :title
+
+    .field
+      =label :event, :date_time, 'Date and Time'
+      =text_field :event, :date_time
+
+    .field
+      = label :event, :location, 'Location'
+      = text_field :event, :location
+
+      .field
+        = label :event, :recurring, 'Is this a Recurring Event?'
+        = check_box :event, :recurring
+      .field
+        = label :event, :description, 'Description'
+        = text_field :event, :description
+      .field
+        = submit_tag 'Add New Event'
+    %p= link_to "Back to Main Events Page", root_path

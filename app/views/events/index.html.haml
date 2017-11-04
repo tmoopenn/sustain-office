@@ -1,0 +1,22 @@
+#main.container
+  %h3.header Main Events Page
+
+  %table.events_table
+    %thead
+      %tr
+        %th Title
+        %th DateTime
+        %th Location
+        %th Recurring?
+        %th Description
+
+    %tbody
+      -@events.each do |event|
+        %tr.property
+          %td.title= link_to "#{event.title}", event_path(event)
+          %td.date_time= "#{event.date_time}"
+          %td.location= "#{event.location}"
+          %td.recurring= "#{event.recurring ? "Yes" : "No"}"
+          %td.description= truncate(event.description, length: 60)
+
+  %p= link_to "Add New Event", new_event_path
