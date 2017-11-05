@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20171104215129) do
   create_table "users", force: :cascade do |t|
     t.string "first"
     t.string "last"
-    t.string "type"
+    t.string "classification"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

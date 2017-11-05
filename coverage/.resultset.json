@@ -44,6 +44,8 @@
     "coverage": {
       "/home/csvm/sustain-office/sustain/app/models/event.rb": [
         1,
+        1,
+        1,
         null
       ],
       "/home/csvm/sustain-office/sustain/app/models/application_record.rb": [
@@ -51,9 +53,59 @@
         1,
         null
       ],
-      "/home/csvm/sustain-office/sustain/app/helpers/application_helper.rb": [
+      "/home/csvm/sustain-office/sustain/app/models/user.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/csvm/sustain-office/sustain/app/controllers/events_controller.rb": [
+        1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
         0,
-        0
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/home/csvm/sustain-office/sustain/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/csvm/sustain-office/sustain/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/csvm/sustain-office/sustain/app/helpers/events_helper.rb": [
+        1,
+        null
       ],
       "/home/csvm/sustain-office/sustain/app/channels/application_cable/connection.rb": [
         0,
@@ -77,12 +129,13 @@
         0,
         0
       ],
-      "/home/csvm/sustain-office/sustain/app/controllers/application_controller.rb": [
+      "/home/csvm/sustain-office/sustain/app/models/participant.rb": [
+        0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1509756968
+    "timestamp": 1509853005
   }
 }

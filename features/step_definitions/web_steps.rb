@@ -259,6 +259,13 @@ Given /^these Events:$/ do |table|
   end
 end
 
+Given /^these users:$/ do |table|
+    table.hashes.each do |h|
+        User.create!(h)
+    end
+end
+
+
 Then /^I should see that "([^"]*)" has a location of "([^"]*)"$/ do |title, location|
   row = all('.event').find('tr') { |el| el.text =~ Regexp.new(title) }
   expect(row.find('.location').text).to eq location
