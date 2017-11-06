@@ -78,7 +78,7 @@ end
 #
 When /^(?:|I )fill in the following:$/ do |fields|
   fields.rows_hash.each do |name, value|
-    When %{I fill in "#{name}" with "#{value}"}
+    fill_in(name, :with=>value)
   end
 end
 
@@ -272,6 +272,6 @@ Then /^I should see that "([^"]*)" has a location of "([^"]*)"$/ do |title, loca
 end
 
 Then /^I should see that "([^"]*)" has a description of "([^"]*)"$/ do |title, description|
-  row = all('.event').find('tr') { |el| el.text =~ Regexp.new(title) }
+  row = all('.event').find('tr') { |el| el.text =~ Regexp.new(title)}
   expect(row.find('.description').text).to eq description
 end

@@ -42,27 +42,21 @@
   },
   "Cucumber Features": {
     "coverage": {
-      "/home/csvm/sustain-office/sustain/app/models/event.rb": [
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/models/event.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/csvm/sustain-office/sustain/app/models/application_record.rb": [
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/home/csvm/sustain-office/sustain/app/models/user.rb": [
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/controllers/events_controller.rb": [
         1,
         1,
-        1,
-        null
-      ],
-      "/home/csvm/sustain-office/sustain/app/controllers/events_controller.rb": [
-        1,
-        1,
-        2,
+        3,
         null,
         null,
         1,
@@ -71,71 +65,134 @@
         null,
         null,
         1,
-        0,
-        null,
-        null,
         1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
         null,
         null,
         1,
         1,
+        1,
+        1,
+        1,
+        null,
         0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
         null,
         null,
         null
       ],
-      "/home/csvm/sustain-office/sustain/app/controllers/application_controller.rb": [
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/home/csvm/sustain-office/sustain/app/helpers/application_helper.rb": [
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/csvm/sustain-office/sustain/app/helpers/events_helper.rb": [
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/helpers/events_helper.rb": [
         1,
         null
       ],
-      "/home/csvm/sustain-office/sustain/app/channels/application_cable/connection.rb": [
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/helpers/participants_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/models/user.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/controllers/participants_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/models/participant.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/csvm/sustain-office/sustain/app/channels/application_cable/channel.rb": [
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/csvm/sustain-office/sustain/app/jobs/application_job.rb": [
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/controllers/users_controller.rb": [
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
         0,
         0
       ],
-      "/home/csvm/sustain-office/sustain/app/mailers/application_mailer.rb": [
-        0,
-        0,
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/jobs/application_job.rb": [
         0,
         0
       ],
-      "/home/csvm/sustain-office/sustain/app/models/participant.rb": [
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1509853005
+    "timestamp": 1509935600
   }
 }
