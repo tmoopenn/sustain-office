@@ -5,12 +5,9 @@
   %p.content Location: #{@event.location}
   %p.content Recurring Event? #{@event.recurring ? "Yes" : "No"}
   %p.content About #{@event.title}: #{@event.description}
-<<<<<<< HEAD
 
   %p=link_to 'Edit event details', edit_event_path(@event)
   %p= link_to 'Delete event', event_path(@event), :method => :delete
-=======
-  
+
   %p= link_to "View Participants", event_participants_path(@event)
->>>>>>> 0d5cceaa5934d068731442ff85fe3a68b1c405c1
   %p= link_to "Back to Main Events Page", root_path
