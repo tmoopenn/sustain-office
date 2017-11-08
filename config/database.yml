@@ -22,8 +22,7 @@ test: &test
 
 production:
   <<: *default
-  adapter: postgresql
-  database: my_database_production
+  database: db/production.sqlite3
 
 cucumber:
   <<: *test
