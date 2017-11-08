@@ -6,4 +6,6 @@
   %p.content Recurring Event? #{@event.recurring ? "Yes" : "No"}
   %p.content About #{@event.title}: #{@event.description}
 
+  %p=link_to 'Edit event details', edit_event_path(@event)
+  %p= link_to 'Delete event', event_path(@event), :method => :delete
   %p= link_to "Back to Main Events Page", root_path

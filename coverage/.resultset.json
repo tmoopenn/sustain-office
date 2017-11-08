@@ -42,47 +42,124 @@
   },
   "Cucumber Features": {
     "coverage": {
-      "/home/csvm/sustain-office/sustain/app/models/event.rb": [
-        1,
-        null
-      ],
-      "/home/csvm/sustain-office/sustain/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
-      "/home/csvm/sustain-office/sustain/app/helpers/application_helper.rb": [
-        0,
-        0
-      ],
-      "/home/csvm/sustain-office/sustain/app/channels/application_cable/connection.rb": [
+      "/Users/Delaney-Jones/sustain-office/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/csvm/sustain-office/sustain/app/channels/application_cable/channel.rb": [
+      "/Users/Delaney-Jones/sustain-office/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/home/csvm/sustain-office/sustain/app/jobs/application_job.rb": [
-        0,
-        0
-      ],
-      "/home/csvm/sustain-office/sustain/app/mailers/application_mailer.rb": [
-        0,
+      "/Users/Delaney-Jones/sustain-office/app/controllers/application_controller.rb": [
         0,
         0,
         0
       ],
-      "/home/csvm/sustain-office/sustain/app/controllers/application_controller.rb": [
+      "/Users/Delaney-Jones/sustain-office/app/controllers/events_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0
+      ],
+      "/Users/Delaney-Jones/sustain-office/app/helpers/application_helper.rb": [
+        0,
+        0
+      ],
+      "/Users/Delaney-Jones/sustain-office/app/helpers/events_helper.rb": [
+        0,
+        0
+      ],
+      "/Users/Delaney-Jones/sustain-office/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/Delaney-Jones/sustain-office/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Delaney-Jones/sustain-office/app/models/application_record.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/Delaney-Jones/sustain-office/app/models/event.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Delaney-Jones/sustain-office/app/models/participant.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Delaney-Jones/sustain-office/app/models/user.rb": [
+        0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1509756968
+    "timestamp": 1510102928
   }
 }

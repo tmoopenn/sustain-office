@@ -1,0 +1,26 @@
+#main.container
+  %h3.header Edit an Existing Event!
+
+  =form_for @event, :method => :patch  do |f|
+    .field
+      =f.label :title, 'Title'
+      =f.text_field :title
+
+    .field
+      =f.label :date_time, 'Date and Time'
+      =f.text_field :date_time
+
+    .field
+      =f.label :location, 'Location'
+      =f.text_field :location
+
+      .field
+        =f.label :recurring, 'Is this a Recurring Event?'
+        =f.check_box :recurring
+      .field
+        =f.label :description, 'Description'
+        =f.text_field :description
+      .field
+        =f.submit 'Update event details'
+
+    %p= link_to "Back to Main Events Page", root_path
