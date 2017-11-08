@@ -42,6 +42,7 @@
   },
   "Cucumber Features": {
     "coverage": {
+<<<<<<< HEAD
       "/Users/Delaney-Jones/sustain-office/app/channels/application_cable/channel.rb": [
         0,
         0,
@@ -56,9 +57,55 @@
       ],
       "/Users/Delaney-Jones/sustain-office/app/controllers/application_controller.rb": [
         0,
-        0,
-        0
+=======
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/models/event.rb": [
+        1,
+        1,
+        1,
+        null
       ],
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/controllers/events_controller.rb": [
+        1,
+        1,
+        3,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+>>>>>>> 0d5cceaa5934d068731442ff85fe3a68b1c405c1
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+<<<<<<< HEAD
       "/Users/Delaney-Jones/sustain-office/app/controllers/events_controller.rb": [
         0,
         0,
@@ -91,10 +138,63 @@
         0,
         0,
         null,
+=======
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/helpers/events_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/helpers/participants_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/models/user.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/controllers/participants_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+>>>>>>> 0d5cceaa5934d068731442ff85fe3a68b1c405c1
         0,
         0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
         0,
+        null,
+        null,
+        1,
         0,
+<<<<<<< HEAD
         0,
         0,
         0,
@@ -119,6 +219,18 @@
         0
       ],
       "/Users/Delaney-Jones/sustain-office/app/helpers/application_helper.rb": [
+=======
+        null,
+        null
+      ],
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/models/participant.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/channels/application_cable/channel.rb": [
+>>>>>>> 0d5cceaa5934d068731442ff85fe3a68b1c405c1
         0,
         0
       ],
@@ -130,23 +242,45 @@
         0,
         0
       ],
+<<<<<<< HEAD
       "/Users/Delaney-Jones/sustain-office/app/mailers/application_mailer.rb": [
+=======
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/channels/application_cable/connection.rb": [
+>>>>>>> 0d5cceaa5934d068731442ff85fe3a68b1c405c1
         0,
         0,
         0,
         0
       ],
+<<<<<<< HEAD
       "/Users/Delaney-Jones/sustain-office/app/models/application_record.rb": [
         0,
         0,
         0
       ],
       "/Users/Delaney-Jones/sustain-office/app/models/event.rb": [
+=======
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/controllers/users_controller.rb": [
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+>>>>>>> 0d5cceaa5934d068731442ff85fe3a68b1c405c1
         0,
         0,
         0,
         0
       ],
+<<<<<<< HEAD
       "/Users/Delaney-Jones/sustain-office/app/models/participant.rb": [
         0,
         0,
@@ -154,12 +288,23 @@
         0
       ],
       "/Users/Delaney-Jones/sustain-office/app/models/user.rb": [
+=======
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/katherinegoodman/Desktop/COSC480/sustain-office/app/mailers/application_mailer.rb": [
+>>>>>>> 0d5cceaa5934d068731442ff85fe3a68b1c405c1
         0,
         0,
         0,
         0
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1510102928
+=======
+    "timestamp": 1509935600
+>>>>>>> 0d5cceaa5934d068731442ff85fe3a68b1c405c1
   }
 }

@@ -15,12 +15,11 @@ Feature: Create a new event
       | Title         | Class 2                |
       | Date and Time | October 31, 5:00 PM    |
       | Location      | 40 Broad St            |
-      | Recurring     | yes                    |
       | Description   | Carbon Footprint Class |
 
-    When I check "Is it recurring?"
-    When I press "Create event"
-    Then I should be on the event page
+    When I check "Is this a recurring event?"
+    When I press "Add New Event"
+    Then I should be on the events page
     And I should see "New event 'Class 2' created"
     And I should see that "Class 2" has a location of "40 Broad St"
     And I should see that "Class 2" has a description of "Carbon Footprint Class"

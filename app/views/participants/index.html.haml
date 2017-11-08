@@ -1,0 +1,16 @@
+#main.container
+  %h3.header Participants for #{@event.title}
+
+  %table.participants_table
+    %thead
+      %tr
+        %th Name
+        %th Classification
+
+    %tbody
+      -@participants.each do |p|
+        %tr.participant
+          %td.name= "#{p.user.first} #{p.user.last}"
+          %td.classification= "#{p.user.classification}"
+
+  %p= link_to "Back to Event", event_path(@event)
