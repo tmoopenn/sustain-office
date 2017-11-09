@@ -13,14 +13,14 @@ Event.create!(title:"Class 2", date_time: "December 2, 2017, 1:00 PM", location:
 
 User.delete_all
 
-User.create!(first:"Vincent", last:"Van Gogh", classification:"faculty")
-User.create!(first:"Rick",last:"Taylor",classification:"student")
+User.create!(name:"Vincent Van Gogh", classification:"faculty")
+User.create!(name:"Rick Taylor",classification:"student")
 
 Participant.delete_all
 
 event = Event.where(:title => "Class 1").first
 user = User.first
-rick = User.where(:first => "Rick").first
+rick = User.where(:name => "Rick Taylor").first
 event_participant = Participant.new
 
 event.participants << event_participant
@@ -29,4 +29,3 @@ user.participants << event_participant
 
 rick.events << event
 event.users << rick
-
