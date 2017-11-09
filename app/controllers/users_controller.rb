@@ -8,9 +8,10 @@ class UsersController < ApplicationController
         else
             flash[:error] = "Error in creating user"
             redirect_to new_user_path
+        end
     end
 
-private
+  private
   def create_update_params
       params.require(:user).permit(:first, :last, :classification)
   end
