@@ -3,8 +3,8 @@ Feature: Edit an event
     so that I can keep the details of an event up to date
     I want to be able to update event information.
 
-    Background: the website already has some existing events and users
-       Given these Events:
+    Background: the website already has some existing events, users and participants
+      Given these Events:
             | title           | date_time           | location        | recurring | description                     |
             | Class 1         | October 30, 4:30 PM | Persson 108     | yes       | Recycling Class                 |
             | Non-recurring 1 | November 2, 7:00 PM | Love Auditorium | no        | Guest Speaker on Global Warming |
@@ -13,6 +13,8 @@ Feature: Edit an event
             | name         | classification |
             | John Cane    | Faculty        |
             | Thomas Smith | Student        |
+
+
 
 #    Background: Non-recurring 1 already has some participants
 #        Given these participants

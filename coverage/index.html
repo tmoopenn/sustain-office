@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-10T13:09:33-05:00">2017-11-10T13:09:33-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-10T13:31:40-05:00">2017-11-10T13:31:40-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -91,6 +91,16 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#1be5cbbce1e01022680cc4ad3e8691bff6af8f48" class="src_link" title="app/controllers/omniauth_callbacks_controller.rb">app/controllers/omniauth_callbacks_controller.rb</a></td>
+        <td class="red strong">0.0 %</td>
+        <td>13</td>
+        <td>12</td>
+        <td>0</td>
+        <td>12</td>
+        <td>0.0</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#b0822fe23dee56f21fe352141d82cf84d35cc78f" class="src_link" title="app/controllers/participants_controller.rb">app/controllers/participants_controller.rb</a></td>
         <td class="red strong">71.43 %</td>
         <td>28</td>
@@ -98,16 +108,6 @@
         <td>10</td>
         <td>4</td>
         <td>0.7</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#6c1ccf6c3231ad7d29322dc9441e1be8be2cc8c8" class="src_link" title="app/controllers/users/omniauth_callbacks_controller.rb">app/controllers/users/omniauth_callbacks_controller.rb</a></td>
-        <td class="red strong">0.0 %</td>
-        <td>13</td>
-        <td>12</td>
-        <td>0</td>
-        <td>12</td>
-        <td>0.0</td>
       </tr>
       
       <tr>
@@ -279,6 +279,16 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#1be5cbbce1e01022680cc4ad3e8691bff6af8f48" class="src_link" title="app/controllers/omniauth_callbacks_controller.rb">app/controllers/omniauth_callbacks_controller.rb</a></td>
+        <td class="red strong">0.0 %</td>
+        <td>13</td>
+        <td>12</td>
+        <td>0</td>
+        <td>12</td>
+        <td>0.0</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#b0822fe23dee56f21fe352141d82cf84d35cc78f" class="src_link" title="app/controllers/participants_controller.rb">app/controllers/participants_controller.rb</a></td>
         <td class="red strong">71.43 %</td>
         <td>28</td>
@@ -286,16 +296,6 @@
         <td>10</td>
         <td>4</td>
         <td>0.7</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#6c1ccf6c3231ad7d29322dc9441e1be8be2cc8c8" class="src_link" title="app/controllers/users/omniauth_callbacks_controller.rb">app/controllers/users/omniauth_callbacks_controller.rb</a></td>
-        <td class="red strong">0.0 %</td>
-        <td>13</td>
-        <td>12</td>
-        <td>0</td>
-        <td>12</td>
-        <td>0.0</td>
       </tr>
       
       <tr>
@@ -1155,6 +1155,103 @@
 </div>
 
       
+        <div class="source_table" id="1be5cbbce1e01022680cc4ad3e8691bff6af8f48">
+  <div class="header">
+    <h3>app/controllers/omniauth_callbacks_controller.rb</h3>
+    <h4><span class="red">0.0 %</span> covered</h4>
+    <div>
+      <b>12</b> relevant lines. 
+      <span class="green"><b>0</b> lines covered</span> and
+      <span class="red"><b>12</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="missed" data-hits="0" data-linenumber="1">
+          
+          
+          <code class="ruby">class OmniauthCallbacksController &lt; Devise::OmniauthCallbacksController</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="2">
+          
+          
+          <code class="ruby">  def google_oauth2</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="3">
+          
+          
+          <code class="ruby">      @user = User.from_omniauth(request.env[&#39;omniauth.auth&#39;])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="5">
+          
+          
+          <code class="ruby">      if @user.persisted?</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="6">
+          
+          
+          <code class="ruby">        flash[:notice] = I18n.t &#39;devise.omniauth_callbacks.success&#39;, kind: &#39;Google&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="7">
+          
+          
+          <code class="ruby">        sign_in_and_redirect @user, event: :authentication</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="8">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="9">
+          
+          
+          <code class="ruby">        session[&#39;devise.google_data&#39;] = request.env[&#39;omniauth.auth&#39;].except(:extra) # Removing extra as it can overflow some session stores</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="10">
+          
+          
+          <code class="ruby">        redirect_to new_user_registration_url, alert: @user.errors.full_messages.join(&quot;\n&quot;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="11">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="13">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
         <div class="source_table" id="b0822fe23dee56f21fe352141d82cf84d35cc78f">
   <div class="header">
     <h3>app/controllers/participants_controller.rb</h3>
@@ -1332,103 +1429,6 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-    </ol>
-  </pre>
-</div>
-
-      
-        <div class="source_table" id="6c1ccf6c3231ad7d29322dc9441e1be8be2cc8c8">
-  <div class="header">
-    <h3>app/controllers/users/omniauth_callbacks_controller.rb</h3>
-    <h4><span class="red">0.0 %</span> covered</h4>
-    <div>
-      <b>12</b> relevant lines. 
-      <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>12</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="missed" data-hits="0" data-linenumber="1">
-          
-          
-          <code class="ruby">class Users::OmniauthCallbacksController &lt; Devise::OmniauthCallbacksController</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="2">
-          
-          
-          <code class="ruby">  def google_oauth2</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="3">
-          
-          
-          <code class="ruby">      @user = User.from_omniauth(request.env[&#39;omniauth.auth&#39;])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="5">
-          
-          
-          <code class="ruby">      if @user.persisted?</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="6">
-          
-          
-          <code class="ruby">        flash[:notice] = I18n.t &#39;devise.omniauth_callbacks.success&#39;, kind: &#39;Google&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="7">
-          
-          
-          <code class="ruby">        sign_in_and_redirect @user, event: :authentication</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="8">
-          
-          
-          <code class="ruby">      else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="9">
-          
-          
-          <code class="ruby">        session[&#39;devise.google_data&#39;] = request.env[&#39;omniauth.auth&#39;].except(:extra) # Removing extra as it can overflow some session stores</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="10">
-          
-          
-          <code class="ruby">        redirect_to new_user_registration_url, alert: @user.errors.full_messages.join(&quot;\n&quot;)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="11">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="12">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="13">
           
           
           <code class="ruby">end</code>

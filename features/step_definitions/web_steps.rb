@@ -275,3 +275,9 @@ Then /^I should see that "([^"]*)" has a description of "([^"]*)"$/ do |title, d
   row = all('.event').find('tr') { |el| el.text =~ Regexp.new(title)}
   expect(row.find('.description').text).to eq description
 end
+
+Given(/these participants:/) do |table|
+  table.hashes.each do |h|
+      Participant.create!(h)
+  end
+end
