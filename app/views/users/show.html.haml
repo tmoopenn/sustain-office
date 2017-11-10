@@ -1,0 +1,23 @@
+#main.container
+  %h3.header #{@user.name}
+  %p.content Email Address:
+  %p.content Classification: #{@user.classification.capitalize}
+  %p.content Points Earned:
+
+  %h3.header Events Participated In:
+
+  %table.participants_table
+    %thead
+      %tr
+        %th Title
+        %th DateTime
+        %th Location
+
+    %tbody
+      -@user.participants.each do |p|
+        %tr.participant
+          %td.title= "#{p.event.title}"
+          %td.date_time= "#{p.event.date_time}"
+          %td.location= "#{p.event.location}"
+
+  %p= link_to "Back to Main Events Page", root_path
