@@ -10,7 +10,7 @@
     %tbody
       -@participants.each do |p|
         %tr.participant
-          %td.name= "#{p.user.name}"
+          %td.name= link_to "#{p.user.name}", user_path(p.user)
           %td.classification= "#{p.user.classification}"
 
   %p= link_to "Back to Event", event_path(@event)
