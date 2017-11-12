@@ -5,9 +5,9 @@ Feature: Edit an event
 
     Background: the website already has some existing events, users and participants
       Given these Events:
-            | title           | date_time           | location        | recurring | description                     |
-            | Class 1         | October 30, 4:30 PM | Persson 108     | yes       | Recycling Class                 |
-            | Non-recurring 1 | November 2, 7:00 PM | Love Auditorium | no        | Guest Speaker on Global Warming |
+            | title           | date_time           | location        | recurring | points | description                     |
+            | Class 1         | October 30, 4:30 PM | Persson 108     | yes       | 3      | Recycling Class                 |
+            | Non-recurring 1 | November 2, 7:00 PM | Love Auditorium | no        | 1      |Guest Speaker on Global Warming |
 
       Given these users:
             | name         | classification |

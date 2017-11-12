@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20171106053842) do
     t.datetime "date_time"
     t.string "location"
     t.boolean "recurring"
+    t.integer "points"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

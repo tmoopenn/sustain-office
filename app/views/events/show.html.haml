@@ -4,6 +4,7 @@
   %p.content Date and Time: #{@event.date_time.to_formatted_s(:custom_long_ordinal)}
   %p.content Location: #{@event.location}
   %p.content Recurring Event? #{@event.recurring ? "Yes" : "No"}
+  %p.content Points Value: #{event.points}
   %p.content About #{@event.title}: #{@event.description}
 
   %p=link_to 'Edit event details', edit_event_path(@event)

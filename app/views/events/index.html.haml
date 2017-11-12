@@ -8,6 +8,7 @@
         %th DateTime
         %th Location
         %th Recurring?
+        %th Points Value
         %th Description
 
     %tbody
@@ -17,6 +18,7 @@
           %td.date_time= "#{event.date_time.to_formatted_s(:custom_long_ordinal)}"
           %td.location= "#{event.location}"
           %td.recurring= "#{event.recurring ? "Yes" : "No"}"
+          %td.points= "#{event.points}"
           %td.description= truncate(event.description, length: 60)
 
   %p= link_to "Add New Event", new_event_path

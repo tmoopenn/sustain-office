@@ -3,4 +3,5 @@ class Event < ApplicationRecord
     has_many :users, :through => :participants
 
     validates_presence_of :title, :location, :date_time, :description
+    validates_numericality_of :points, :only_integer => true
 end

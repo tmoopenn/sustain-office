@@ -8,8 +8,8 @@
 
 Event.delete_all
 
-Event.create!(title:"Class 1", date_time: "December 4, 2017, 4:00 PM", location: "Persson 201", recurring: false, description: "Learn about clean eating!")
-Event.create!(title:"Class 2", date_time: "December 2, 2017, 1:00 PM", location: "McGregory 300", recurring: true, description: "Carbon!")
+Event.create!(title:"Class 1", date_time: "December 4, 2017, 4:00 PM", location: "Persson 201", recurring: false, points: 1, description: "Learn about clean eating!")
+Event.create!(title:"Class 2", date_time: "December 2, 2017, 1:00 PM", location: "McGregory 300", recurring: true, points: 2, description: "Carbon!")
 
 User.delete_all
 

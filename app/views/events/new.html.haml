@@ -17,7 +17,9 @@
     .field
       =label :event, :recurring, 'Is this a recurring event?'
       =check_box :event, :recurring
-
+    .field
+      =f.label :points, 'Points Value'
+      =f.number_field :points
     .field
       = label :event, :description, 'Description'
       = text_field :event, :description
