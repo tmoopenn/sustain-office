@@ -8,18 +8,20 @@
 
     .field
       =label :event, :date_time, 'Date and Time'
-      =text_field :event, :date_time
+      =datetime_select :event, :date_time, ampm: true, discard_seconds: true
 
     .field
-      = label :event, :location, 'Location'
-      = text_field :event, :location
+      =label :event, :location, 'Location'
+      =text_field :event, :location
 
-      .field
-        = label :event, :recurring, 'Is this a recurring event?'
-        = check_box :event, :recurring
-      .field
-        = label :event, :description, 'Description'
-        = text_field :event, :description
-      .field
-        = submit_tag 'Add New Event'
+    .field
+      =label :event, :recurring, 'Is this a recurring event?'
+      =check_box :event, :recurring
+
+    .field
+      = label :event, :description, 'Description'
+      = text_field :event, :description
+    .field
+      =submit_tag 'Add New Event'
+
     %p= link_to "Back to Main Events Page", root_path

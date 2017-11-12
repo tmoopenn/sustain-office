@@ -13,7 +13,23 @@ Feature: Create a new event
     Given I am on the create new event page
     When I fill in the following:
       | Title         | Class 2                |
-      | Date and Time | October 31, 5:00 PM    |
+      | Date and Time | October 31, 5:00       |
+      | Location      | 40 Broad St            |
+      | Description   | Carbon Footprint Class |
+
+    When I check "Is this a recurring event?"
+    When I press "Add New Event"
+    Then I should be on the events page
+    And I should see "New event 'Class 2' created"
+    And I should see that "Class 2" has a location of "40 Broad St"
+    And I should see that "Class 2" has a description of "Carbon Footprint Class"
+
+  Scenario: Create a new event with out a field
+  Given I am on the create new event page
+  Given I am on the create new event page
+    When I fill in the following:
+      | Title         | Class 2                |
+      | Date and Time | October 31, 5:00:00    |
       | Location      | 40 Broad St            |
       | Description   | Carbon Footprint Class |
 

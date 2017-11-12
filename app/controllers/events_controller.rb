@@ -13,7 +13,10 @@ class EventsController < ApplicationController
   end
 
   def create
+    date_t = DateTime.civil(params[:event]["date_time(1i)"].to_i,params[:event]["date_time(2i)"].to_i,params[:event]["date_time(3i)"].to_i,params[:event]["date_time(4i)"].to_i,params[:event]["date_time(5i)"].to_i)
+    date_t = date_t.strftime('%a %b %d %H:%M')
     e = Event.new(create_update_params)
+    e.date_time = date_t
     if e.save
       flash[:notice] = "New event \'#{e.title}\' created"
       redirect_to events_path
@@ -31,6 +34,8 @@ class EventsController < ApplicationController
 
   def update
     id = params[:id]
+    date_t = DateTime.civil(params[:event]["date_time(1i)"].to_i,params[:event]["date_time(2i)"].to_i,params[:event]["date_time(3i)"].to_i,params[:event]["date_time(4i)"].to_i,params[:event]["date_time(5i)"].to_i)
+    params[:event][:date_time] = date_t.strftime('%a %b %d %H:%M')
     e = Event.find(id)
     e.update(create_update_params)
     if e.save
