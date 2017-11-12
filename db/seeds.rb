@@ -21,11 +21,11 @@ Participant.delete_all
 event = Event.where(:title => "Class 1").first
 user = User.first
 rick = User.where(:name => "Rick Taylor").first
-event_participant = Participant.new
+#event_participant = Participant.new
 
-event.participants << event_participant
+#event.participants << event_participant
 user.events << event
-user.participants << event_participant
+#user.participants << event_participant
 
 rick.events << event
-event.users << rick
+#event.users << rick
