@@ -15,10 +15,11 @@ Feature: Create a new event
       | Title         | Class 2                         |
       | Location      | 40 Broad St                     |
       | Description   | Carbon Footprint Class          |
+      | Points value  | 3                               |
 
     When I check "Is this a recurring event?"
     When I select datetime "December 4, 2017 05:00 PM" as the "date_time"
-    When I press "Add New Event"
+    When I press "Add this New Event"
     Then I should be on the events page
     And I should see "New event 'Class 2' created"
     And I should see that "Class 2" has a location of "40 Broad St"
@@ -34,9 +35,7 @@ Feature: Create a new event
 
     When I select datetime "November 10, 2017 05:30 PM" as the "date_time"
     When I check "Is this a recurring event?"
-    When I press "Add New Event"
-    Then I should be on the events page
-    And I should see "New event 'Class 2' created"
-    And I should see that "Class 2" has a location of "40 Broad St"
-    And I should see that "Class 2" has a date_time of "November 10, 2017 05:30 PM"
-    And I should see that "Class 2" has a description of "Carbon Footprint Class"
+    When I press "Add this New Event"
+    Then I should be on the create new event page
+    And I should see "Error adding event"
+    And I should not see "Class 2"
