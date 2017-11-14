@@ -5,9 +5,9 @@ Feature: Create a new event
 
   Background: the website already has some existing events
     Given these Events:
-      | title           | date_time                 | location        | recurring | description                     |
-      | Class 1         | October 30, 2017 04:30 PM | Persson 108     | yes       | Recycling Class                 |
-      | Non-recurring 1 | November 2, 2017 07:00 PM | Love Auditorium | no        | Guest Speaker on Global Warming |
+      | title           | date_time                 | location        | recurring | points | description                     |
+      | Class 1         | October 30, 2017 04:30 PM | Persson 108     | yes       |    3   | Recycling Class                 |
+      | Non-recurring 1 | November 2, 2017 07:00 PM | Love Auditorium | no        |    1   | Guest Speaker on Global Warming |
 
   Scenario: Create a new event
     Given I am on the create new event page
