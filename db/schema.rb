@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106053842) do
+ActiveRecord::Schema.define(version: 20171113215959) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20171106053842) do
     t.string "uid"
     t.string "email"
     t.string "password"
+    t.integer "tpoints", default: 0
   end
 
 end
