@@ -5,9 +5,9 @@ Feature: Edit an event
 
     Background: the website already has some existing events, users and participants
       Given these Events:
-            | title           | date_time           | location        | recurring | description                     |
-            | Class 1         | October 30, 4:30 PM | Persson 108     | yes       | Recycling Class                 |
-            | Non-recurring 1 | November 2, 7:00 PM | Love Auditorium | no        | Guest Speaker on Global Warming |
+            | title           | date_time                  | location        | recurring | description                     |
+            | Class 1         | October 30, 2017 04:30 PM  | Persson 108     | yes       | Recycling Class                 |
+            | Non-recurring 1 | November 2, 2017, 07:00 PM | Love Auditorium | no        | Guest Speaker on Global Warming |
 
       Given these users:
             | name         | classification |
@@ -23,7 +23,7 @@ Feature: Edit an event
     Scenario: Update the details of a specific event
      Given I am on the events page
      When I follow "Class 1"
-     Then I should see "October 30, 4:30 PM"
+     Then I should see "October 30, 2017 04:30 PM"
      And I should see "Persson 108"
      And I should see "Recycling Class"
      When I follow "Edit event details"
