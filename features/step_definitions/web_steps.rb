@@ -281,3 +281,17 @@ Given(/these participants:/) do |table|
       Participant.create!(h)
   end
 end
+
+When /^(?:|I )select datetime "([^ ]*) ([^ ]*), ([^ ]*) ([^:]*):([^ ]*) ([^ ]*)" as the "([^"]*)"$/ do |month, day, year, hour, minute, ampm, field|
+  select(year,   :from => "event_date_time_1i")
+  select(month,  :from => "event_date_time_2i")
+  select(day,    :from => "event_date_time_3i")
+  select(hour ++ " " ++ ampm,   :from => "event_date_time_4i")
+  select(minute, :from => "event_date_time_5i")
+end
+
+
+Then /^I should see that "([^"]*)" has a date_time of "([^"]*)"$/ do |title, date_time|
+  row = all('.event').find('tr') { |el| el.text =~ Regexp.new(title)}
+  expect(row.find('.date_time').text).to eq date_time
+end
