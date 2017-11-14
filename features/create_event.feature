@@ -26,8 +26,7 @@ Feature: Create a new event
     And I should see that "Class 2" has a date_time of "December 4, 2017 05:00 PM"
 
   Scenario: Create a new event with out a field
-  Given I am on the create new event page
-  Given I am on the create new event page
+    Given I am on the create new event page
     When I fill in the following:
       | Title         | Class 2                    |
       | Location      | 40 Broad St                |

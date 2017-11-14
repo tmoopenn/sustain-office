@@ -18,12 +18,12 @@
       =label :event, :recurring, 'Is this a recurring event?'
       =check_box :event, :recurring
     .field
-      =f.label :points, 'Points Value'
-      =f.number_field :points
+      = label :points, 'Points Value'
+      = number_field :event, :points
     .field
       = label :event, :description, 'Description'
       = text_field :event, :description
     .field
-      =submit_tag 'Add New Event'
+      = submit_tag 'Add New Event'
 
     %p= link_to "Back to Main Events Page", root_path
