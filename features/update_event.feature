@@ -23,7 +23,7 @@ Feature: Edit an event
     Scenario: Update the details of a specific event
      Given I am on the events page
      When I follow "Class 1"
-     Then I should see "October 30, 4:30 PM"
+     Then I should see "October 30, 2017 04:30 PM"
      And I should see "Persson 108"
      And I should see "Recycling Class"
      When I follow "Edit event details"
