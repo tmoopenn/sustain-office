@@ -1,8 +1,9 @@
 #main.container
-  %h3.header #{@user.name}
-  %p.content Email Address:
-  %p.content Classification: #{@user.classification.capitalize}
-  %p.content Points Earned: #{@user.tpoints}
+  %h3.profileheader #{@user.name}
+  %p.profilecontent Email Address:
+  -#TODO need to add check or require it if going to capitalize
+  -#%p.profilecontent Classification: #{@user.classification.capitalize}
+  %p.profilecontent Points Earned: #{@user.tpoints}
 
   %h3.header Events Participated In:
 

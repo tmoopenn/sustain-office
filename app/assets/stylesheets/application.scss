@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+ @import url(https://fonts.googleapis.com/css?family=Sumana);
+
+
+$color-primary-0: #E3E3DE;
+ $color-font-0: #525252;
+ $color-background-0: #FFFFFF;
+
+
+ @mixin fonty($size) {
+     font-family:Garamond, Georgia, serif;
+     font-size: $size;
+     font-weight: 200;
+     font-style: normal;
+}
+body{
+  font-family:Garamond, Georgia, serif;
+  background-color: $color-background-0;
+
+  .sign_in {
+    position:absolute;
+    top: 0px;
+    right: 90px;
+    color: #022015;
+  }
+
+  .sign_out{
+    position:absolute;
+    top: 0px;
+    right: 20px;
+    color: #022015;
+  }
+  .title{
+    color: #4C7401;
+    line-height: 100%;
+  }
+
+
+}
