@@ -24,3 +24,5 @@
 
 # Ignore environmental variables
 *.sh
+
+coverage
