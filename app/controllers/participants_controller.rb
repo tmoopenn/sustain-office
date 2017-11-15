@@ -16,6 +16,10 @@ class ParticipantsController < ApplicationController
     public
     def index
         @participants = @event.participants
+        if @participants.empty?
+            flash[:notice] = "There are no participants registered for #{@event}"
+            redirect_to events_path(@event)
+        end
     end
 
     def new
@@ -23,7 +27,7 @@ class ParticipantsController < ApplicationController
     end
 
     def create
-       if @event.users.find(current_user.id) != nil
+       if @event.users.where("user_id = ?",current_user.id).first != nil
             flash[:notice] = "You are already registered for this event"
             redirect_to events_path(@event)
        else

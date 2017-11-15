@@ -11,6 +11,7 @@
       -@participants.each do |p|
         %tr.participant
           %td.name= link_to "#{p.user.name}", user_path(p.user)
-          %td.classification= "#{p.user.classification.capitalize}"
+          -#TODO:need to add check or require it if going to capitalize
+          %td.classification= "#{p.user.classification}"
 
   %p= link_to "Back to Event", event_path(@event)
