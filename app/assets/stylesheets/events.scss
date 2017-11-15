@@ -3,9 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url(https://fonts.googleapis.com/css?family=Sumana);
 
-$color-primary-0: #92C192;
-$color-font-0: #022015;
-$color-background-0: #DBDBD0;
+
+$color-primary-0: #E3E3DE;
+$color-font-0: #525252;
+$color-background-0: #FFFFFF;
 
 
 @mixin fonty($size) {
@@ -24,6 +25,7 @@ body{
     font-size: 18pt;
   }
   .recurringheader{
+    color: $color-font-0;
     line-height: 90%;
     position: relative;
     top: 0px;
