@@ -8,8 +8,8 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     #header
-    = link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path
-    = link_to "Sign out", destroy_user_session_path, :method => :delete
+    %p.sign_in= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path
+    %p.sign_out= link_to "Sign out", destroy_user_session_path, :method => :delete
     -if flash[:notice] || flash[:error] || flash[:alert]
       .flash
         -if flash[:notice]

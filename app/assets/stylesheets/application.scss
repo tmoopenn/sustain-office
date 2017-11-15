@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+body{
+
+  .sign_in {
+    position:absolute;
+    top: 0px;
+    right: 90px;
+    color: #022015;
+  }
+
+  .sign_out{
+    position:absolute;
+    top: 0px;
+    right: 20px;
+    color: #022015;
+
+  }
+
+
+}
