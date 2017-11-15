@@ -17,7 +17,7 @@ class ParticipantsController < ApplicationController
     def index
         @participants = @event.participants
         if @participants.empty?
-            flash[:notice] = "There are no participants registered for #{@event}"
+            flash[:notice] = "There are no participants registered for #{@event.title}"
             redirect_to events_path(@event)
         end
     end

@@ -15,6 +15,7 @@ User.delete_all
 
 User.create!(name:"Vincent Van Gogh", classification:"faculty")
 User.create!(name:"Rick Taylor",classification:"student")
+arno = User.create!(name:"Arno Holt",classification: "faculty")
 
 Participant.delete_all
 
@@ -29,3 +30,5 @@ user.events << event
 
 rick.events << event
 #event.users << rick
+
+Participant.create!(:event_id => event.id,:user_id => arno.id)
