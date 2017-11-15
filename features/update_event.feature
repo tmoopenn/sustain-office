@@ -14,16 +14,10 @@ Feature: Edit an event
             | John Cane    | Faculty        |
             | Thomas Smith | Student        |
 
-
-
-#    Background: Non-recurring 1 already has some participants
-#        Given these participants
-#            | user_id | event_id |
-
     Scenario: Update the details of a specific event
      Given I am on the events page
      When I follow "Class 1"
-     Then I should see "October 30, 4:30 PM"
+     Then I should see "October 30, 2017 04:30 PM"
      And I should see "Persson 108"
      And I should see "Recycling Class"
      When I follow "Edit event details"
@@ -32,3 +26,22 @@ Feature: Edit an event
      And I press "Update event details"
      Then I should see "Learning about the third R: Recycling"
      And I should see "Ho 101"
+
+   Scenario: Incorrectly update the details of a specific event
+    Given I am on the events page
+    When I follow "Class 1"
+    Then I should see "October 30, 2017 04:30 PM"
+    And I should see "Persson 108"
+    And I should see "Recycling Class"
+    When I follow "Edit event details"
+    And I fill in "Description" with ""
+    And I press "Update event details"
+    Then I should see "Error updating event"
+
+  Scenario: Delete an event
+   Given I am on the events page
+   When I follow "Class 1"
+   Then I should see "October 30, 2017 04:30 PM"
+   When I follow "Delete event"
+   Then I should be on the events page
+   And I should see "Event Class 1 deleted"

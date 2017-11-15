@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
+    @events_recurring = Event.where(recurring: true)
+    @events_nonrecurring = Event.where(recurring: false)
   end
 
   def show
@@ -39,10 +40,10 @@ class EventsController < ApplicationController
     e = Event.find(id)
     e.update(create_update_params)
     if e.save
-      flash[:notice] = "Event \"#{e.title}\" updated"
+      flash[:notice] = "Event #{e.title} updated"
       redirect_to events_path
     else
-      flash[:error] = "Error updating rental property"
+      flash[:error] = "Error updating event"
       redirect_to edit_event_path(e)
     end
   end
@@ -50,7 +51,7 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    flash[:notice] = "Event \"#{@event.title}\" deleted"
+    flash[:notice] = "Event #{@event.title} deleted"
     redirect_to events_path
   end
 
