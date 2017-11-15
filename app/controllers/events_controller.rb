@@ -55,6 +55,9 @@ class EventsController < ApplicationController
     redirect_to events_path
   end
 
+  def about
+  end
+
 
   private
   def create_update_params
