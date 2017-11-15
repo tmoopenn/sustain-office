@@ -22,14 +22,13 @@ $color-primary-0: #E3E3DE;
 
 
  @mixin fonty($size) {
-     font-family: 'Sumana', serif;
+     font-family:Garamond, Georgia, serif;
      font-size: $size;
      font-weight: 200;
      font-style: normal;
- }
-
+}
 body{
-  font-family: 'Sumana', serif;
+  font-family:Garamond, Georgia, serif;
   background-color: $color-background-0;
 
   .sign_in {
