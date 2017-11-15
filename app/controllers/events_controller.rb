@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
+    @events_recurring = Event.where(recurring: true)
+    @events_nonrecurring = Event.where(recurring: false)
   end
 
   def show
