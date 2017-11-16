@@ -18,7 +18,7 @@ class ParticipantsController < ApplicationController
         @participants = @event.participants
         if @participants.empty?
             flash[:notice] = "There are no participants registered for #{@event.title}"
-            redirect_to events_path(@event)
+            redirect_to event_path(@event)
         end
     end
 
@@ -29,14 +29,14 @@ class ParticipantsController < ApplicationController
     def create
        if @event.users.where("user_id = ?",current_user.id).first != nil
             flash[:notice] = "You are already registered for this event"
-            redirect_to events_path(@event)
+            redirect_to event_path(@event)
        else
             if current_user.participants << @event.participants.build(params[:participant])
                 flash[:notice] = "You are now registered for the event #{@event.title}!"
             else
             flash[:warning] = "Failed to register for #{@event.title}" 
             end
-            redirect_to events_path(@event)
+            redirect_to event_path(@event)
         end
     end
 end
