@@ -267,12 +267,13 @@ end
 
 
 Then /^I should see that "([^"]*)" has a location of "([^"]*)"$/ do |title, location|
-  row = all('.event').find('tr') { |el| el.text =~ Regexp.new(title) }
+  #debugger
+  row = all('.eventbody').find('tr') { |el| el.text =~ Regexp.new(title) }
   expect(row.find('.location').text).to eq location
 end
 
 Then /^I should see that "([^"]*)" has a description of "([^"]*)"$/ do |title, description|
-  row = all('.event').find('tr') { |el| el.text =~ Regexp.new(title)}
+  row = all('.eventbody').find('tr') { |el| el.text =~ Regexp.new(title)}
   expect(row.find('.description').text).to eq description
 end
 
@@ -292,6 +293,6 @@ end
 
 
 Then /^I should see that "([^"]*)" has a date_time of "([^"]*)"$/ do |title, date_time|
-  row = all('.event').find('tr') { |el| el.text =~ Regexp.new(title)}
+  row = all('.eventbody').find('tr') { |el| el.text =~ Regexp.new(title)}
   expect(row.find('.date_time').text).to eq date_time
 end
