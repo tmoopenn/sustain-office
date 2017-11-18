@@ -20,8 +20,7 @@ Feature: Logging/Registering Participation in an Event
 
         Scenario: Logging participation in an event
             Given I am on the events page
-            #When I follow "Sign in with Google"
-            #Then I should see "Sucessfully authenticated from Google account"
+           #And I am signed in with provider "Google_oauth2"
             When I follow "Non-recurring 1"
             When I follow "ATTEND THIS EVENT!"
             Then I should see "You are now registered for the event Non-recurring 1"

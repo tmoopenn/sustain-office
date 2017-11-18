@@ -12,7 +12,15 @@ require 'cucumber/rails'
 # If you'd prefer to use XPath, just uncomment this line and adjust any
 # selectors in your step definitions to use the XPath syntax.
 # Capybara.default_selector = :xpath
-
+=begin
+OmniAuth.config.test_mode = true
+Capybara.default_host = 'http://example.org'
+OmniAuth.config.test_mode = true
+OmniAuth.config.add_mock(:google_oauth2, {
+    :uid => '12345',
+    :user_info => {:name => 'John Cane'}
+    })
+=end
 # By default, any exception happening in your Rails application will bubble up
 # to Cucumber so that your scenario will fail. This is a different from how
 # your application behaves in the production environment, where an error page will

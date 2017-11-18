@@ -296,3 +296,7 @@ Then /^I should see that "([^"]*)" has a date_time of "([^"]*)"$/ do |title, dat
   row = all('.eventbody').find('tr') { |el| el.text =~ Regexp.new(title)}
   expect(row.find('.date_time').text).to eq date_time
 end
+
+Given /^I am signed in with provider "([^"]*)"$/ do |provider|
+    visit "users/auth/#{provider.downcase}"
+end

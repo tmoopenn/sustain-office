@@ -31,7 +31,7 @@ class ParticipantsController < ApplicationController
             flash[:notice] = "You are already registered for this event"
             redirect_to event_path(@event)
        else
-            if current_user.participants << @event.participants.build(params[:participant])
+            if current_user.participants << @event.participants.build
                 flash[:notice] = "You are now registered for the event #{@event.title}!"
             else
             flash[:warning] = "Failed to register for #{@event.title}" 
@@ -39,4 +39,12 @@ class ParticipantsController < ApplicationController
             redirect_to event_path(@event)
         end
     end
+    
+    def destroy
+        #TODO will user unregister from event by viewing all their events on user page or unregister from show event by conditionally showing link to unregister if already registered?
+    end
+  #  private
+  #  def create_update_params
+  #      params.require(:participant).permit(:eventDate,:user_id,:event_id)
+  #  end
 end
