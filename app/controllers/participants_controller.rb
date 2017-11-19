@@ -2,7 +2,7 @@ class ParticipantsController < ApplicationController
     before_action :has_event,:authenticate_user!
     protected
     def has_event
-      #  unless @current_user 
+      #  unless @current_user
       #      flash[:warning] = "You must be logged in to see participants or participate in an event"
       #      redirect_to events_path(@event)
       #  end
@@ -10,9 +10,9 @@ class ParticipantsController < ApplicationController
             flash[:warning] = "Event must exist to have participants"
             redirect_to events_path
         end
-    
+
     end
-    
+
     public
     def index
         @participants = @event.participants
@@ -34,12 +34,12 @@ class ParticipantsController < ApplicationController
             if current_user.participants << @event.participants.build
                 flash[:notice] = "You are now registered for the event #{@event.title}!"
             else
-            flash[:warning] = "Failed to register for #{@event.title}" 
+                flash[:warning] = "Failed to register for #{@event.title}" 
             end
             redirect_to event_path(@event)
         end
     end
-    
+
     def destroy
         #TODO will user unregister from event by viewing all their events on user page or unregister from show event by conditionally showing link to unregister if already registered?
     end

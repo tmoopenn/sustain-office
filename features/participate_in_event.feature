@@ -13,7 +13,7 @@ Feature: Logging/Registering Participation in an Event
                 | name          | classification |
                 | John Cane     | Faculty|
                 | Thomas Smith  | Student|
-            
+
             Given these participants:
                 |eventDate                 |user_id | event_id  |
                 |November 2, 2017 07:00 PM | 1      | 2         |
@@ -30,7 +30,7 @@ Feature: Logging/Registering Participation in an Event
             And I should see "Guest Speaker on Global Warming"
 
         Scenario: Already registered/participating in an event
-            Given I am signed in with provider Google 
+            Given I am signed in with provider Google
             Given I am on the events page
             When I follow "Non-recurring 1"
             When I follow "ATTEND THIS EVENT!"
