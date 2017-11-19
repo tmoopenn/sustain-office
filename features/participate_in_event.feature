@@ -13,6 +13,10 @@ Feature: Logging/Registering Participation in an Event
                 | name          | classification |
                 | John Cane     | Faculty|
                 | Thomas Smith  | Student|
+            
+            Given these participants:
+                |eventDate                 |user_id | event_id  |
+                |November 2, 2017 07:00 PM | 1      | 2         |
 
         Scenario: Logging participation in an event
             Given I am signed in with provider Google
@@ -24,3 +28,18 @@ Feature: Logging/Registering Participation in an Event
             And I should see "November 2, 2017 07:00 PM"
             And I should see "Love Auditorium"
             And I should see "Guest Speaker on Global Warming"
+
+        Scenario: Already registered/participating in an event
+            Given I am signed in with provider Google 
+            Given I am on the events page
+            When I follow "Non-recurring 1"
+            When I follow "ATTEND THIS EVENT!"
+            When I follow "ATTEND THIS EVENT!"
+            Then I should see "You are already registered for this event"
+
+      #  Scenario: Failing to register for an event
+      #      Given I am signed in with provider Google
+      #      Given I am on the events page
+      #      When I follow "Class 1"
+      #      When I follow "ATTEND THIS EVENT!" and registration fails
+      #      Then I should see "Failed to register for Class 1"

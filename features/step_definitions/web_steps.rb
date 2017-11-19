@@ -322,3 +322,7 @@ Given("I do not have a profile") do
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:google_oauth2] = nil
 end
+
+When("I follow \"ATTEND THIS EVENT!\" and registration fails") do
+    
+end

@@ -22,9 +22,9 @@ class ParticipantsController < ApplicationController
         end
     end
 
-    def new
-        @participant = @event.participants.build
-    end
+#    def new
+#        @participant = @event.participants.build
+#    end
 
     def create
        if @event.users.where("user_id = ?",current_user.id).first != nil

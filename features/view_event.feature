@@ -36,3 +36,10 @@ Feature: View an event
      When I follow "View Participants"
      Then I should see "John Cane"
      And I should see "Faculty"
+
+    Scenario: Event has no participants
+    Given I am signed in with provider Google
+    Given I am on the events page
+    When I follow "Class 1"
+    When I follow "View Participants"
+    Then I should see "There are no participants registered for Class 1"
