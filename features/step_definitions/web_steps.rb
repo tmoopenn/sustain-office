@@ -298,5 +298,5 @@ Then /^I should see that "([^"]*)" has a date_time of "([^"]*)"$/ do |title, dat
 end
 
 Given /^I am signed in with provider "([^"]*)"$/ do |provider|
-    visit "users/auth/#{provider.downcase}"
+    visit "/users/auth/#{provider.downcase}"
 end

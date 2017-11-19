@@ -13,18 +13,14 @@ Feature: Logging/Registering Participation in an Event
                 | name          | classification |
                 | John Cane     | Faculty|
                 | Thomas Smith  | Student|
-                
-            Given these participants:
-                | eventDate        | user_id | event_id |
-                | November 2, 2017 07:00 PM |   1     | 2        |
 
         Scenario: Logging participation in an event
+            Given I am signed in with provider "google_oauth2"
             Given I am on the events page
-           #And I am signed in with provider "Google_oauth2"
             When I follow "Non-recurring 1"
             When I follow "ATTEND THIS EVENT!"
             Then I should see "You are now registered for the event Non-recurring 1"
             And I should see "Non-recurring 1"
-            And I should see "November 2, 2017 7:00 PM
+            And I should see "November 2, 2017 07:00 PM"
             And I should see "Love Auditorium"
             And I should see "Guest Speaker on Global Warming"
