@@ -297,6 +297,28 @@ Then /^I should see that "([^"]*)" has a date_time of "([^"]*)"$/ do |title, dat
   expect(row.find('.date_time').text).to eq date_time
 end
 
-Given /^I am signed in with provider "([^"]*)"$/ do |provider|
-    visit "/users/auth/#{provider.downcase}"
+Given /^I am signed in with provider Google$/ do
+    OmniAuth.config.test_mode = true
+    OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
+    :provider => 'google_oauth2',
+    :uid => '123545',
+    :info => {"name"=>"Oauth Tester", "email"=>"oauthtest@gmail.com"}
+    # etc.
+    })
+    visit "/users/auth/google_oauth2"
+end
+
+Given("I have a profile") do
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
+  :provider => 'google_oauth2',
+  :uid => '123545',
+  :info => {"name"=>"Oauth Tester", "email"=>"oauthtest@gmail.com"}
+  # etc.
+  })
+end
+
+Given("I do not have a profile") do
+    OmniAuth.config.test_mode = true
+    OmniAuth.config.mock_auth[:google_oauth2] = nil
 end

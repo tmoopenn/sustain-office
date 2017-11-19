@@ -27,7 +27,7 @@ Feature: View an event
      And I should see "Recycling Class"
 
     Scenario: View Participants of a specific event
-     Given I am signed in with provider "google_oauth2"
+     Given I am signed in with provider Google
      Given I am on the events page
      When I follow "Non-recurring 1"
      Then I should see "November 2, 2017 07:00 PM"

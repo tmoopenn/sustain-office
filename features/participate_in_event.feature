@@ -15,7 +15,7 @@ Feature: Logging/Registering Participation in an Event
                 | Thomas Smith  | Student|
 
         Scenario: Logging participation in an event
-            Given I am signed in with provider "google_oauth2"
+            Given I am signed in with provider Google
             Given I am on the events page
             When I follow "Non-recurring 1"
             When I follow "ATTEND THIS EVENT!"
