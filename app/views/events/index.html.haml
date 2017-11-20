@@ -15,7 +15,7 @@
       -@events_recurring.each do |event|
         %tr.eventbody
           %td.title= link_to "#{event.title}", event_path(event)
-          %td.date_time= "#{event.date_time.to_formatted_s(:custom_long_ordinal)}"
+          %td.date_time= "#{event.date_time.try(:to_formatted_s, :custom_long_ordinal)}"
           %td.location= "#{event.location}"
           %td.points= "#{event.points}"
           %td.description= truncate(event.description, length: 60)
