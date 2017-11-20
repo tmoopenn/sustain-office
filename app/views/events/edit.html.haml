@@ -1,4 +1,4 @@
-#main.container
+#main.container.form-page
   %h3.header Edit an Existing Event!
 
   =form_for @event, :method => :patch  do |f|
@@ -8,22 +8,22 @@
 
     .field
       =f.label :date_time, 'Date and Time'
-      =f.datetime_select :date_time, ampm: true, discard_seconds: true
+      %div
+        =f.datetime_select :date_time, ampm: true, discard_seconds: true
 
     .field
       =f.label :location, 'Location'
       =f.text_field :location
 
-      .field
+    .field
+      %div
         =f.label :recurring, 'Is this a Recurring Event?'
         =f.check_box :recurring
-      .field
-        =f.label :points, 'Points Value'
-        =f.number_field :points
-      .field
-        =f.label :description, 'Description'
-        =f.text_field :description
-      .field
-        =f.submit 'Update event details'
-
-    %p= link_to "Back to Main Events Page", root_path
+    .field
+      =f.label :points, 'Points Value'
+      =f.number_field :points
+    .field
+      =f.label :description, 'Description'
+      =f.text_field :description
+    .field
+      =f.submit 'Update event details'

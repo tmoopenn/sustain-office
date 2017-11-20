@@ -6,12 +6,19 @@
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag 'favicon.ico'
   %body
     #header
-    %a.logo{ :href => events_path}= image_tag("sus_logo.jpg", :width => 500)
-    %h1.title Colgate Sustainability Passport Program
-    %p.sign_in= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path
-    %p.sign_out= link_to "Sign out", destroy_user_session_path, :method => :delete
+    %h3.title Colgate Sustainability Passport Program
+    %div.navbar
+      %a.logo{ :href => events_path}= image_tag("sus_logo.jpg", :height => 50)
+      %t= link_to "About", about_path
+      %t= link_to "Events", events_path
+      -if user_signed_in?
+        %t.name= link_to "#{current_user.name}", user_path(current_user)
+        %t.sign_out= link_to "Sign out", destroy_user_session_path, :method => :delete
+      -else
+        %t.sign_in= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path
     -if flash[:notice] || flash[:error] || flash[:alert]
       .flash
         -if flash[:notice]

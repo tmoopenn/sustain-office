@@ -323,6 +323,27 @@ Given("I do not have a profile") do
     OmniAuth.config.mock_auth[:google_oauth2] = nil
 end
 
-When("I follow \"ATTEND THIS EVENT!\" and registration fails") do
-    
+Then("I should see my name") do
+    if page.respond_to? :should
+      page.should have_xpath('//*', :text => "Oauth Tester")
+    else
+      assert page.has_xpath?('//*', :text => "Oauth Tester")
+    end
+end
+
+When("I click on my name") do
+  click_link("Oauth Tester")
+end
+
+Then("I should see my profile") do
+    if page.respond_to? :should
+      page.should have_xpath('//*', :text => "Oauth Tester")
+    else
+      assert page.has_xpath?('//*', :text => "Oauth Tester")
+    end
+    if page.respond_to? :should
+      page.should have_xpath('//*', :text => "oauthtest@gmail.com")
+    else
+      assert page.has_xpath?('//*', :text => "oauthtest@gmail.com")
+    end
 end

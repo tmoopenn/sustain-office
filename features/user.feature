@@ -13,3 +13,10 @@ Feature:
         Given I do not have a profile
         Given I am on the home page
         When I follow "Sign in with Google"
+
+    Scenario: View my profile
+        Given I am signed in with provider Google
+        Given I am on the home page
+        Then I should see my name
+        When I click on my name
+        Then I should see my profile

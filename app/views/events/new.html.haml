@@ -1,4 +1,4 @@
-#main.container
+#main.container.form-page
   %h3.header Add a New Event!
 
   =form_tag events_path, :method => :post, :multipart=> true do
@@ -8,15 +8,17 @@
 
     .field
       =label :event, :date_time, 'Date and Time'
-      =datetime_select :event, :date_time, ampm: true, discard_seconds: true
+      %div
+        =datetime_select :event, :date_time, ampm: true, discard_seconds: true
 
     .field
       =label :event, :location, 'Location'
       =text_field :event, :location
 
     .field
-      =label :event, :recurring, 'Is this a recurring event?'
-      =check_box :event, :recurring
+      %div
+        =label :event, :recurring, 'Is this a recurring event?'
+        =check_box :event, :recurring
 
     .field
       =label :event, :points, 'Points value'
@@ -28,5 +30,3 @@
 
     .field
       =submit_tag 'Add this New Event'
-
-    %p= link_to "Back to Main Events Page", root_path

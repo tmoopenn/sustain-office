@@ -1,6 +1,10 @@
 #main.container
   %h3.header Upcoming Events:
 
+  %div
+    %t= link_to "Add New Event", new_event_path
+
+
   %h3.recurringheader Recurring Events:
   %table.recurring_events_table
     %thead
@@ -38,7 +42,3 @@
           %td.location= "#{event.location}"
           %td.points= "#{event.points}"
           %td.description= truncate(event.description, length: 60)
-
-
-  %p= link_to "Add New Event", new_event_path
-  %p= link_to "About the Program", about_path
