@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20171113215959) do
     t.string "uid"
     t.string "email"
     t.string "password"
-    t.integer "points", default: 0
+    t.integer "tpoints", default: 0
   end
 
 end
