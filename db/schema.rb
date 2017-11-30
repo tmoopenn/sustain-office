@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20171113215959) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
-    t.array "date_time"
+    t.datetime "date_time"
     t.string "location"
     t.boolean "recurring"
     t.integer "points"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20171113215959) do
     t.string "uid"
     t.string "email"
     t.string "password"
-    t.integer "points", default: 0
+    t.integer "tpoints", default: 0
   end
 
 end
