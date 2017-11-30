@@ -6,8 +6,8 @@ Feature: View a user
   Background: the website already has some existing events and users
     Given these Events:
        | id | title           | date_time                | location        | recurring | points | description                     |
-       | 1  | Class 1         | October 30, 2017 4:30 PM | Persson 108     | yes       | 3      | Recycling Class                 |
-       | 2  | Non-recurring 1 | November 2, 2017 7:00 PM | Love Auditorium | no        | 1      | Guest Speaker on Global Warming |
+       | 1  | Class 1         | October 30, 2018 4:30 PM | Persson 108     | yes       | 3      | Recycling Class                 |
+       | 2  | Non-recurring 1 | November 2, 2018 7:00 PM | Love Auditorium | no        | 1      | Guest Speaker on Global Warming |
 
    Given these users:
        | name         | classification |
@@ -16,8 +16,8 @@ Feature: View a user
 
   Given these participants:
        | eventDate                 | user_id | event_id |
-       | November 2, 2017 07:00 PM |   1     | 2        |
-       | November 6, 2017 05:00 PM |   1     | 1        |
+       | November 2, 2018 07:00 PM |   1     | 2        |
+       | November 6, 2018 05:00 PM |   1     | 1        |
 
   Scenario: View details of an event's participant
     Given I am signed in with provider Google

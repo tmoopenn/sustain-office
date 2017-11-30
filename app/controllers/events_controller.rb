@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   def index
-    @events_recurring = Event.where(recurring: true)
-    @events_nonrecurring = Event.where(recurring: false)
+    @events_recurring = Event.where(recurring: true).where('date_time > ?', DateTime.now)
+    @events_nonrecurring = Event.where(recurring: false).where('date_time > ?', DateTime.now)
   end
 
   def show
