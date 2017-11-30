@@ -8,3 +8,4 @@ Feature: View "About" Page
     When I follow "About"
     Then I should be on the about page
     And I should see "About the Program"
+    When I press "Colgate Sustainability Web Page"
