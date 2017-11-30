@@ -59,6 +59,11 @@ class EventsController < ApplicationController
   def about
   end
 
+  def all
+    @events_recurring = Event.where(recurring: true)
+    @events_nonrecurring = Event.where(recurring: false)
+  end
+
 
   private
   def create_update_params

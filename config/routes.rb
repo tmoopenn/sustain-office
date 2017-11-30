@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get "/about" => 'events#about'
+  get "/all" => 'events#all'
 
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   devise_scope :user do
