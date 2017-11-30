@@ -14,6 +14,7 @@
       %a.logo{ :href => events_path}= image_tag("sus_logo.jpg", :height => 50)
       %t= link_to "About", about_path
       %t= link_to "Events", events_path
+      %t= link_to "All Events", all_path
       -if user_signed_in?
         %t.name= link_to "#{current_user.name}", user_path(current_user)
         %t.sign_out= link_to "Sign out", destroy_user_session_path, :method => :delete
