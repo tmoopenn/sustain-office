@@ -9,3 +9,4 @@ Feature: View "About" Page
     Then I should be on the about page
     And I should see "About the Program"
     When I press "Colgate Sustainability Web Page"
+    Then I should be on the Colgate website
