@@ -1,5 +1,5 @@
 Feature: View all events
-  As a participant
+  As a user
   so that I can view upcoming events
   I want to be able to view only upcoming events on the homepage
 

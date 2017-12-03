@@ -5,9 +5,9 @@
   -#%p.profilecontent Classification: #{@user.classification.capitalize}
   %p.profilecontent Points Earned: #{@user.tpoints}
 
-  %h3.header Events Participated In:
+  %h3.header Events Registered For:
 
-  %table.participants_table
+  %table.registrees_table
     %thead
       %tr
         %th Title
@@ -15,8 +15,8 @@
         %th Location
 
     %tbody
-      -@user.participants.each do |p|
-        %tr.participant
+      -@user.registrees.each do |p|
+        %tr.registree
           %td.title= link_to "#{p.event.title}", event_path(p.event)
           %td.date_time= "#{p.event.occurrences.next.date_time.try(:to_formatted_s, :custom_long_ordinal)}"
           %td.location= "#{p.event.location}"

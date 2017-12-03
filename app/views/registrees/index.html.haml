@@ -1,15 +1,15 @@
 #main.container
-  %h3.header Participants for #{@event.title}
+  %h3.header Users Registered for #{@event.title}
 
-  %table.participants_table
+  %table.registrees_table
     %thead
       %tr
         %th Name
         %th Classification
 
     %tbody
-      -@participants.each do |p|
-        %tr.participant
+      -@registrees.each do |p|
+        %tr.registree
           %td.name= link_to "#{p.user.name}", user_path(p.user)
           -#TODO:need to add check or require it if going to capitalize
           %td.classification= "#{p.user.classification}"

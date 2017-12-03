@@ -15,5 +15,8 @@ Rails.application.routes.draw do
   resources :events do
     resources :registrees
   end
+  resources :occurrences do
+    resources :attendees
+  end
 
 end
