@@ -1,7 +1,7 @@
 #main.container
   %h3.header #{@event.title}
 
-  %p.content Date and Time: #{@event.date_time.to_formatted_s(:custom_long_ordinal)}
+  %p.content Date and Time: #{@event.occurrences.first.date_time.to_formatted_s(:custom_long_ordinal)}
   %p.content Location: #{@event.location}
   %p.content Recurring Event? #{@event.recurring ? "Yes" : "No"}
   %p.content Points Value: #{@event.points}

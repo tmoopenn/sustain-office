@@ -6,10 +6,9 @@
       =label :event, :title, 'Title'
       =text_field :event, :title
 
-    .field
-      =label :event, :date_time, 'Date and Time'
-      %div
-        =datetime_select :event, :date_time, ampm: true, discard_seconds: true
+    .select-date
+      =fields_for :occurrences do |x|
+        =x.datetime_select :date_time, ampm: true, discard_seconds: true
 
     .field
       =label :event, :location, 'Location'

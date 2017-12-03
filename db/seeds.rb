@@ -8,8 +8,13 @@
 
 Event.delete_all
 
-Event.create!(title:"Class 1", date_time: "December 4, 2017, 4:00 PM", location: "Persson 201", recurring: false, points: 1, description: "Learn about clean eating!")
-Event.create!(title:"Class 2", date_time: "December 2, 2017, 1:00 PM", location: "McGregory 300", recurring: true, points: 2, description: "Carbon!")
+eventA = Event.create!(title:"Class 1", location: "Persson 201", recurring: false, points: 1, description: "Learn about clean eating!")
+eventB = Event.create!(title:"Class 2", location: "McGregory 300", recurring: true, points: 2, description: "Carbon!")
+
+Occurrence.delete_all
+
+occ1 = Occurrence.create!(date_time: "December 4, 2017, 4:00 PM", event_id: eventA.id)
+occ2 = Occurrence.create!(date_time: "December 2, 2017, 1:00 PM", event_id: eventB.id)
 
 User.delete_all
 
@@ -20,12 +25,15 @@ arno = User.create!(name:"Arno Holt",classification: "faculty")
 Participant.delete_all
 
 event = Event.where(:title => "Class 1").first
+event2 = Event.where(:title => "Class 2").first
 user = User.first
 rick = User.where(:name => "Rick Taylor").first
 #event_participant = Participant.new
 
 #event.participants << event_participant
 user.events << event
+event.occurrences << occ1
+event2.occurrences << occ2
 #user.participants << event_participant
 
 rick.events << event
