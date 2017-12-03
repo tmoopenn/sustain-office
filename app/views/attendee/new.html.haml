@@ -1,0 +1,31 @@
+#main.container.form-page
+  %h3.header Add an Event Summary
+
+  =form_tag occurrence_attendees_path(), :method => :post, :multipart=> true do
+    .field
+      =label :occurrence, :title, 'Title'
+      =text_field :event, :title
+
+    .select-date
+      =fields_for :occurrences do |x|
+        =x.datetime_select :date_time, ampm: true, discard_seconds: true
+
+    .field
+      =label :event, :location, 'Location'
+      =text_field :event, :location
+
+    .field
+      %div
+        =label :event, :recurring, 'Is this a recurring event?'
+        =check_box :event, :recurring
+
+    .field
+      =label :event, :points, 'Points value'
+      =number_field :event, :points
+
+    .field
+      =label :event, :description, 'Description'
+      =text_field :event, :description
+
+    .field
+      =submit_tag 'Add this New Event'
