@@ -259,6 +259,12 @@ Given /^these Events:$/ do |table|
   end
 end
 
+Given /^these Occurrences:$/ do |table|
+  table.hashes.each do |h|
+    Occurrence.create!(h)
+  end
+end
+
 Given /^these users:$/ do |table|
     table.hashes.each do |h|
         User.create!(h)
@@ -284,11 +290,11 @@ Given(/these participants:/) do |table|
 end
 
 When /^(?:|I )select datetime "([^ ]*) ([^ ]*), ([^ ]*) ([^:]*):([^ ]*) ([^ ]*)" as the "([^"]*)"$/ do |month, day, year, hour, minute, ampm, field|
-  select(year,   :from => "event_date_time_1i")
-  select(month,  :from => "event_date_time_2i")
-  select(day,    :from => "event_date_time_3i")
-  select(hour ++ " " ++ ampm,   :from => "event_date_time_4i")
-  select(minute, :from => "event_date_time_5i")
+  select(year,   :from => "occurrences_date_time_1i")
+  select(month,  :from => "occurrences_date_time_2i")
+  select(day,    :from => "occurrences_date_time_3i")
+  select(hour ++ " " ++ ampm,   :from => "occurrences_date_time_4i")
+  select(minute, :from => "occurrences_date_time_5i")
 end
 
 

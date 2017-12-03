@@ -18,6 +18,6 @@
       -@user.participants.each do |p|
         %tr.participant
           %td.title= link_to "#{p.event.title}", event_path(p.event)
-          %td.date_time= "#{p.event.date_time.try(:to_formatted_s, :custom_long_ordinal)}"
+          %td.date_time= "#{p.event.occurrences.next.date_time.try(:to_formatted_s, :custom_long_ordinal)}"
           %td.location= "#{p.event.location}"
           -#%td.delete= link_to "Cancel attending this event", event_participant_path(p.event,p)

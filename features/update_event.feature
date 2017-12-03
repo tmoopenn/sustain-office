@@ -5,14 +5,19 @@ Feature: Edit an event
 
     Background: the website already has some existing events, users and participants
       Given these Events:
-            | title           | date_time           | location        | recurring | points | description                     |
-            | Class 1         | October 30, 2018 4:30 PM | Persson 108     | yes       | 3      | Recycling Class                 |
-            | Non-recurring 1 | November 2, 2018 7:00 PM | Love Auditorium | no        | 1      |Guest Speaker on Global Warming |
+          | id  | title           |  location        | recurring | points | description                     |
+          | 1   | Class 1         |  Persson 108     | yes       | 3      | Recycling Class                 |
+          | 2   | Non-recurring 1 |  Love Auditorium | no        | 1      |Guest Speaker on Global Warming |
 
       Given these users:
             | name         | classification |
             | John Cane    | Faculty        |
             | Thomas Smith | Student        |
+
+      Given these Occurrences:
+            | event_id |  date_time |
+            | 1        | October 30, 2018 4:30 PM |
+            | 2        | November 2, 2018 7:00 PM |
 
     Scenario: Update the details of a specific event
      Given I am on the events page
