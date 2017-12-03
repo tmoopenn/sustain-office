@@ -1,7 +1,9 @@
 class User < ApplicationRecord
   devise :omniauthable, omniauth_providers: [:google_oauth2]
-  has_many :participants
-  has_many :events, :through => :participants
+  has_many :attendees
+  has_many :registrees
+  has_many :events, :through => :registrees
+  has_many :occurrences, :through => :attendees
 
   def self.from_omniauth(access_token)
     data = access_token.info

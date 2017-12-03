@@ -1,4 +1,4 @@
-class ParticipantsController < ApplicationController
+class RegistreesController < ApplicationController
     before_action :has_event,:authenticate_user!
     protected
     def has_event
