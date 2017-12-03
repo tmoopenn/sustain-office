@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 20171203163714) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
+    t.datetime "date_time"
     t.string "location"
     t.boolean "recurring"
     t.integer "points"
