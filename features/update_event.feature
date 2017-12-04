@@ -73,3 +73,5 @@ Feature: Edit an event
     Then I should see "Event Class 1 updated"
     When I follow "Class 1"
     Then I should see "October 21, 2020 08:00 PM"
+    And I should see "October 30, 2018 04:30 PM"
+    And I should see "October 19, 2019 08:00 PM"
