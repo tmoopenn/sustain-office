@@ -2,13 +2,19 @@ class AttendeesController < ApplicationController
   before_action :has_occurrence,:authenticate_user!
   protected
   def has_occurrence
-      unless (@occurrence = Occurrence.where(:id => params[:occurrence_id]).first)
+      unless (@occurrence = Occurrence.where("id =?", params[:occurrence_id]).first)
           flash[:warning] = "Occurrence must exist to have registrees"
           redirect_to occurrences_path
       end
   end
   
   public
+  def show
+    @event = @occurrence.event
+   # @attendee = params[:attendee]
+    @attendee = Attendee.where("id = ?", params[:attendee_id]).first
+  end
+  
   def new
   # byebug
    # @attendee = @occurrence.attendees.build(:user_id => current_user.id)
