@@ -28,7 +28,7 @@ class EventsController < ApplicationController
         redirect_to events_path and return
       else
         flash[:error] = "Error adding event"
-        redirect_to new_event_path(e) and return
+        redirect_to new_event_path(@event) and return
       end
     end
     render :action => 'new'
