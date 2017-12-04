@@ -1,31 +1,40 @@
 #main.container.form-page
   %h3.header Add a New Event!
 
-  =form_tag events_path, :method => :post, :multipart=> true do
+  =form_for @event, :method => :post, :multipart=> true do |f|
     .field
-      =label :event, :title, 'Title'
-      =text_field :event, :title
+      =f.label :title, 'Title'
+      =f.text_field :title
 
     .select-date
-      =fields_for :occurrences do |x|
+      =f.fields_for :occurrences, @occurrences do |x|
         =x.datetime_select :date_time, ampm: true, discard_seconds: true
+        %div.select-date
+        =label_tag :_destroy do
+          =x.check_box :_destroy
+        =x.label :_destroy, 'Delete'
+        %div.select-date
 
     .field
-      =label :event, :location, 'Location'
-      =text_field :event, :location
+      =f.submit 'Add another occurrence', :name => "add_occurrence"
+      =f.submit 'Delete checked occurrences', :name => "remove_occurrence"
+
+    .field
+      =f.label :location, 'Location'
+      =f.text_field :location
 
     .field
       %div
-        =label :event, :recurring, 'Is this a recurring event?'
-        =check_box :event, :recurring
+        =f.label :recurring, 'Is this a recurring event?'
+        =f.check_box :recurring
 
     .field
-      =label :event, :points, 'Points value'
-      =number_field :event, :points
+      =f.label :points, 'Points value'
+      =f.number_field :points
 
     .field
-      =label :event, :description, 'Description'
-      =text_field :event, :description
+      =f.label :description, 'Description'
+      =f.text_field :description
 
     .field
-      =submit_tag 'Add this New Event'
+      =f.submit 'Add this New Event'

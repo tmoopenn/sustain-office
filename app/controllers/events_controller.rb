@@ -15,47 +15,61 @@ class EventsController < ApplicationController
   end
 
   def create
-    date_t = DateTime.civil(params[:occurrences]["date_time(1i)"].to_i,
-      params[:occurrences]["date_time(2i)"].to_i,
-      params[:occurrences]["date_time(3i)"].to_i,
-      params[:occurrences]["date_time(4i)"].to_i,
-      params[:occurrences]["date_time(5i)"].to_i)
-    date_t = date_t.strftime('%a %b %d %H:%M')
-    e = Event.new(create_update_params)
-    o = Occurrence.new(:date_time => date_t, :event_id => e.id)
-    e.occurrences << o
-    if e.save
-      flash[:notice] = "New event \'#{e.title}\' created"
-      redirect_to events_path
+    @event = Event.new(create_update_params)
+    if params[:add_occurrence]
+      #Add empty occurrence associated with @event
+      @event.occurrences.build
+    elsif params[:remove_occurrence]
+      # nested occurrence that have _destroy attribute = 1 will be automatically deleted by rails
     else
-      flash[:error] = "Error adding event"
-      redirect_to new_event_path(e)
+      # save like normal
+      if @event.save
+        flash[:notice] = "New event \'#{@event.title}\' created"
+        redirect_to events_path and return
+      else
+        flash[:error] = "Error adding event"
+        redirect_to new_event_path(e) and return
+      end
     end
-
+    render :action => 'new'
   end
 
   def edit
     id = params[:id]
     @event = Event.find(id)
-    @occurrences = @event.occurrences
   end
 
   def update
     id = params[:id]
-    date_t = DateTime.civil(params[:event][:occurrences_attributes]["0"]["date_time(1i)"].to_i,
-      params[:event][:occurrences_attributes]["0"]["date_time(2i)"].to_i,
-      params[:event][:occurrences_attributes]["0"]["date_time(3i)"].to_i,
-      params[:event][:occurrences_attributes]["0"]["date_time(4i)"].to_i,
-      params[:event][:occurrences_attributes]["0"]["date_time(5i)"].to_i)
-    e = Event.find(id)
-    e.update(create_update_params)
-    if e.save
-      flash[:notice] = "Event #{e.title} updated"
-      redirect_to events_path
+    @event = Event.find(id)
+
+    if params[:add_occurrence]
+      # rebuild the occurrence attributes that doesn't have an id
+    	@event.update(create_update_params)
+      # add one more empty occurrence attribute
+      @event.occurrences.build
+    elsif params[:remove_occurrence]
+      # collect all marked for delete occurrence ids
+      removed_occurrences = params[:event][:occurrences_attributes].collect { |i, att| att[:id] if (att[:id] && att[:_destroy].to_i == 1) }
+      # physically delete the occurrences from database
+      Occurence.delete(removed_occurrences)
+      flash[:notice] = "Occurrences removed."
+      for attribute in params[:event][:occurrences_attributes]
+      	# rebuild occurrences attributes that doesn't have an id and its _destroy attribute is not 1
+        @event.occurrences.build(attribute.last.except(:_destroy)) if (!attribute.last.has_key?(:id) && attribute.last[:_destroy].to_i == 0)
+      end
     else
-      flash[:error] = "Error updating event"
-      redirect_to edit_event_path(e)
+      # save goes like usual
+      @event.update(create_update_params)
+      if @event.save
+        flash[:notice] = "Event #{@event.title} updated"
+        redirect_to events_path and return
+      else
+        flash[:error] = "Error updating event"
+        redirect_to edit_event_path(@event) and return
+      end
     end
+    render :action => 'edit'
   end
 
   def destroy
@@ -76,7 +90,9 @@ class EventsController < ApplicationController
 
   private
   def create_update_params
-    params.require(:event).permit(:title, :location, :recurring, :points, :description, :occurrences_attributes => [:id, :date_time])
+    params.require(:event).permit(:title, :add_occurrence,
+      :remove_occurrence, :location, :recurring, :points, :description,
+      :occurrences_attributes => [:id, :date_time, :_destroy])
   end
 
 end

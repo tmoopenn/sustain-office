@@ -13,8 +13,8 @@ eventB = Event.create!(title:"Class 2", location: "McGregory 300", recurring: tr
 
 Occurrence.delete_all
 
-occ1 = Occurrence.create!(date_time: "December 4, 2017, 4:00 PM", event_id: eventA.id)
-occ2 = Occurrence.create!(date_time: "December 2, 2017, 1:00 PM", event_id: eventB.id)
+occ1 = Occurrence.create!(date_time: "January 20, 2018, 4:00 PM", event_id: eventA.id)
+occ2 = Occurrence.create!(date_time: "December 31, 2018, 1:00 PM", event_id: eventB.id)
 
 User.delete_all
 
