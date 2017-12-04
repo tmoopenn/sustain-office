@@ -16,8 +16,9 @@ Feature: Edit an event
 
       Given these Occurrences:
             | event_id |  date_time |
-            | 1        | October 30, 2018 4:30 PM |
             | 2        | November 2, 2018 7:00 PM |
+            | 1        | October 30, 2018 4:30 PM |
+            | 1        | October 19, 2019 8:00 PM |
 
     Scenario: Update the details of a specific event
      Given I am on the events page
@@ -50,3 +51,25 @@ Feature: Edit an event
    When I follow "Delete event"
    Then I should be on the events page
    And I should see "Event Class 1 deleted"
+
+  Scenario: Delete an occurrence of an event
+    Given I am on the events page
+    When I follow "Class 1"
+    When I follow "Edit event details"
+    When I check "Delete"
+    And I press "Delete checked occurrences"
+    And I press "Update event details"
+    Then I should see "Event Class 1 updated"
+    When I follow "Class 1"
+    Then I should not see "October 19, 2019 8:00 PM"
+
+  Scenario: Add an occurrence to an event
+    Given I am on the events page
+    When I follow "Class 1"
+    When I follow "Edit event details"
+    When I press "Add another occurrence"
+    Then I select "October 21, 2020 8:00 PM" as the third datetime
+    And I press "Update event details"
+    Then I should see "Event Class 1 updated"
+    When I follow "Class 1"
+    Then I should see "October 21, 2020 08:00 PM"

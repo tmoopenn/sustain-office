@@ -87,7 +87,7 @@ When /^(?:|I )select "([^"]*)" from "([^"]*)"$/ do |value, field|
 end
 
 When /^(?:|I )check "([^"]*)"$/ do |field|
-  check(field)
+  check(field, match: :first)
 end
 
 When /^(?:|I )uncheck "([^"]*)"$/ do |field|

@@ -6,16 +6,16 @@
       =f.label :title, 'Title'
       =f.text_field :title
 
-    .select-date
-      =f.fields_for :occurrences, @occurrences do |d|
-        =d.datetime_select :date_time, ampm: true, discard_seconds: true
-        %div.select-date
-        =label_tag :_destroy do
-          =d.check_box :_destroy
-        =d.label :_destroy, 'Delete this occurence'
+    .field
+      =f.fields_for :occurrences, @occurrences do |x|
+        %p.select-date
+          =x.datetime_select :date_time, ampm: true, discard_seconds: true
+          =label_tag :_destroy do
+            =x.check_box :_destroy
+          =x.label :_destroy, 'Delete'
 
     .field
-      =f.submit 'Add another occurence', :name => "add_occurrence"
+      =f.submit 'Add another occurrence', :name => "add_occurrence"
       =f.submit 'Delete checked occurrences', :name => "remove_occurrence"
 
     .field

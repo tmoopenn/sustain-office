@@ -50,14 +50,17 @@ class EventsController < ApplicationController
       @event.occurrences.build
     elsif params[:remove_occurrence]
       # collect all marked for delete occurrence ids
-      removed_occurrences = params[:event][:occurrences_attributes].collect { |i, att| att[:id] if (att[:id] && att[:_destroy].to_i == 1) }
-      # physically delete the occurrences from database
-      Occurence.delete(removed_occurrences)
-      flash[:notice] = "Occurrences removed."
-      for attribute in params[:event][:occurrences_attributes]
-      	# rebuild occurrences attributes that doesn't have an id and its _destroy attribute is not 1
-        @event.occurrences.build(attribute.last.except(:_destroy)) if (!attribute.last.has_key?(:id) && attribute.last[:_destroy].to_i == 0)
+      removed_occurrences = []
+      i = 0
+      while(1)
+        break if params[:event][:occurrences_attributes][i.to_s].nil?
+        if params[:event][:occurrences_attributes][i.to_s]["_destroy"] == "1"
+          removed_occurrences << params[:event][:occurrences_attributes][i.to_s][:id]
+        end
+        i = i+1
       end
+      Occurrence.delete(removed_occurrences)
+      flash[:notice] = "Occurrences removed."
     else
       # save goes like usual
       @event.update(create_update_params)
