@@ -1,0 +1,10 @@
+#main.container.form-page
+  %h3.header Add an Event Summary for #{@occurrence.event.title}
+  
+  =form_for @attendee, :url => occurrence_attendees_path(@occurrence),:method => :post do |f|
+    .field
+      =f.label :summary, 'Summary'
+      =f.text_field :summary
+    
+    .field
+      =f.submit 'Submit this summary'

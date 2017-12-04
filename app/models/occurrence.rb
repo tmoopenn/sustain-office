@@ -5,6 +5,7 @@ class Occurrence < ApplicationRecord
   scope :date_order, lambda {order("date_time")}
   
   belongs_to :event
+  has_many :attendees
 
   validates_presence_of :date_time
 end
