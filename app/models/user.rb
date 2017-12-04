@@ -17,4 +17,9 @@ class User < ApplicationRecord
     end
     user
   end
+
+  def find_attendee(occurrence)
+    attendee = Attendee.where("user_id = ? AND occurrence_id = ?",self.id,occurrence.id).first
+    return attendee
+  end
 end

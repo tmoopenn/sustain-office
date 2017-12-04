@@ -1,0 +1,11 @@
+#main.container
+  %h3.viewsummary Summary for Event #{@event.title}
+
+  %table.attendee_summary_table
+    %thead
+      %tr 
+        %th Description 
+
+    %tbody
+      %td.sum_descript= "#{@attendee.summary}"
+      
