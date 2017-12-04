@@ -1,4 +1,4 @@
-class ParticipantsController < ApplicationController
+class RegistreesController < ApplicationController
     before_action :has_event,:authenticate_user!
     protected
     def has_event
@@ -7,7 +7,7 @@ class ParticipantsController < ApplicationController
       #      redirect_to events_path(@event)
       #  end
         unless (@event = Event.where(:id => params[:event_id]).first)
-            flash[:warning] = "Event must exist to have participants"
+            flash[:warning] = "Event must exist to have registrees"
             redirect_to events_path
         end
 
@@ -15,9 +15,9 @@ class ParticipantsController < ApplicationController
 
     public
     def index
-        @participants = @event.participants
-        if @participants.empty?
-            flash[:notice] = "There are no participants registered for #{@event.title}"
+        @registrees = @event.registrees
+        if @registrees.empty?
+            flash[:notice] = "There are no users registered for #{@event.title}"
             redirect_to event_path(@event)
         end
     end
@@ -31,10 +31,10 @@ class ParticipantsController < ApplicationController
             flash[:notice] = "You are already registered for this event"
             redirect_to event_path(@event)
        else
-            if current_user.participants << @event.participants.build
+            if current_user.registrees << @event.registrees.build
                 flash[:notice] = "You are now registered for the event #{@event.title}!"
             else
-                flash[:warning] = "Failed to register for #{@event.title}" 
+                flash[:warning] = "Failed to register for #{@event.title}"
             end
             redirect_to event_path(@event)
         end

@@ -22,7 +22,7 @@ User.create!(name:"Vincent Van Gogh", classification:"faculty")
 User.create!(name:"Rick Taylor",classification:"student")
 arno = User.create!(name:"Arno Holt",classification: "faculty")
 
-Participant.delete_all
+Registree.delete_all
 
 event = Event.where(:title => "Class 1").first
 event2 = Event.where(:title => "Class 2").first
@@ -39,4 +39,4 @@ event2.occurrences << occ2
 rick.events << event
 #event.users << rick
 
-Participant.create!(:event_id => event.id,:user_id => arno.id)
+Registree.create!(:event_id => event.id,:user_id => arno.id)

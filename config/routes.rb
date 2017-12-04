@@ -13,7 +13,10 @@ Rails.application.routes.draw do
   root to: 'events#index'
 
   resources :events do
-    resources :participants
+    resources :registrees
+  end
+  resources :occurrences do
+    resources :attendees
   end
 
 end

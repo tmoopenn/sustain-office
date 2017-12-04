@@ -1,5 +1,5 @@
 Feature: View all events
-  As a participant
+  As a user
   so that I can view all events
   I want to be able to view all past and future events on the view all events page
 

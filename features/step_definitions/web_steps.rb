@@ -283,9 +283,9 @@ Then /^I should see that "([^"]*)" has a description of "([^"]*)"$/ do |title, d
   expect(row.find('.description').text).to eq description
 end
 
-Given(/these participants:/) do |table|
+Given(/these registrees:/) do |table|
   table.hashes.each do |h|
-      Participant.create!(h)
+      Registree.create!(h)
   end
 end
 

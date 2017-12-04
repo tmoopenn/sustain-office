@@ -3,7 +3,7 @@ Feature: Edit an event
     so that I can keep the details of an event up to date
     I want to be able to update event information.
 
-    Background: the website already has some existing events, users and participants
+    Background: the website already has some existing events, users and registrees
       Given these Events:
           | id  | title           |  location        | recurring | points | description                     |
           | 1   | Class 1         |  Persson 108     | yes       | 3      | Recycling Class                 |
