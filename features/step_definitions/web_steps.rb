@@ -289,12 +289,34 @@ Given(/these registrees:/) do |table|
   end
 end
 
-When /^(?:|I )select datetime "([^ ]*) ([^ ]*), ([^ ]*) ([^:]*):([^ ]*) ([^ ]*)" as the "([^"]*)"$/ do |month, day, year, hour, minute, ampm, field|
-  select(year,   :from => "event_occurrences_attributes_0_date_time_1i")
-  select(month,  :from => "event_occurrences_attributes_0_date_time_2i")
-  select(day,    :from => "event_occurrences_attributes_0_date_time_3i")
-  select(hour ++ " " ++ ampm,   :from => "event_occurrences_attributes_0_date_time_4i")
-  select(minute, :from => "event_occurrences_attributes_0_date_time_5i")
+When /^(?:|I )select "([^ ]*) ([^ ]*), ([^ ]*) ([^:]*):([^ ]*) ([^ ]*)" as the first datetime$/ do |month, day, year, hour, minute, ampm|
+  number = 0
+
+  select(year,   :from => "event_occurrences_attributes_#{number}_date_time_1i")
+  select(month,  :from => "event_occurrences_attributes_#{number}_date_time_2i")
+  select(day,    :from => "event_occurrences_attributes_#{number}_date_time_3i")
+  select(hour ++ " " ++ ampm,   :from => "event_occurrences_attributes_#{number}_date_time_4i")
+  select(minute, :from => "event_occurrences_attributes_#{number}_date_time_5i")
+end
+
+When /^(?:|I )select "([^ ]*) ([^ ]*), ([^ ]*) ([^:]*):([^ ]*) ([^ ]*)" as the second datetime$/ do |month, day, year, hour, minute, ampm|
+  number = 1
+
+  select(year,   :from => "event_occurrences_attributes_#{number}_date_time_1i")
+  select(month,  :from => "event_occurrences_attributes_#{number}_date_time_2i")
+  select(day,    :from => "event_occurrences_attributes_#{number}_date_time_3i")
+  select(hour ++ " " ++ ampm,   :from => "event_occurrences_attributes_#{number}_date_time_4i")
+  select(minute, :from => "event_occurrences_attributes_#{number}_date_time_5i")
+end
+
+When /^(?:|I )select "([^ ]*) ([^ ]*), ([^ ]*) ([^:]*):([^ ]*) ([^ ]*)" as the third datetime$/ do |month, day, year, hour, minute, ampm|
+  number = 2
+
+  select(year,   :from => "event_occurrences_attributes_#{number}_date_time_1i")
+  select(month,  :from => "event_occurrences_attributes_#{number}_date_time_2i")
+  select(day,    :from => "event_occurrences_attributes_#{number}_date_time_3i")
+  select(hour ++ " " ++ ampm,   :from => "event_occurrences_attributes_#{number}_date_time_4i")
+  select(minute, :from => "event_occurrences_attributes_#{number}_date_time_5i")
 end
 
 
