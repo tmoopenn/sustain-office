@@ -6,14 +6,15 @@
       =f.label :title, 'Title'
       =f.text_field :title
 
-    .select-date
+    .field
       =f.fields_for :occurrences, @occurrences do |x|
-        =x.datetime_select :date_time, ampm: true, discard_seconds: true
-        %div.select-date
-        =label_tag :_destroy do
-          =x.check_box :_destroy
-        =x.label :_destroy, 'Delete'
-        %div.select-date
+        %p.select-date
+          =x.datetime_select :date_time, ampm: true, discard_seconds: true
+          =label_tag :_destroy do
+            =x.check_box :_destroy
+          =x.label :_destroy, 'Delete'
+
+
 
     .field
       =f.submit 'Add another occurrence', :name => "add_occurrence"
