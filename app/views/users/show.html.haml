@@ -21,4 +21,5 @@
           %td.date_time= "#{p.event.occurrences.next.date_time.try(:to_formatted_s, :custom_long_ordinal)}"
           %td.location= "#{p.event.location}"
           -#%td.delete= link_to "Cancel attending this event", event_participant_path(p.event,p)
-          %td.summary= link_to "Submit Event Summary", new_occurrence_attendee_path(p.event.occurrences.next.date_time)
+          -if current_user.id == @user.id
+            %td.summary= link_to "Submit Event Summary", new_occurrence_attendee_path(:occurrence_id => p.event.occurrences.next.id)
