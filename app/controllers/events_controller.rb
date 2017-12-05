@@ -1,3 +1,7 @@
+# See https://rbudiharso.wordpress.com/2010/07/07/dynamically-add-and-remove-input-field-in-rails-without-javascript/
+# for information on dynamically adding and removing DateTime input fields for update and new.
+
+
 class EventsController < ApplicationController
   def index
     @events_recurring = Event.where(recurring: true).upcoming
