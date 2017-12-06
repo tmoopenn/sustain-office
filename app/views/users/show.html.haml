@@ -23,7 +23,8 @@
           -#%td.delete= link_to "Cancel attending this event", event_participant_path(p.event,p)
           -if current_user.id == @user.id && summary_submitted?(@user,p.event.occurrences.next)
             %td.summary= link_to "View Event Summary", occurrence_attendee_path(:occurrence_id => p.event.occurrences.next.id,:attendee_id =>@user.find_attendee(p.event.occurrences.next).id)
+            %td.sumedit= link_to "Edit Event Summary", edit_occurrence_attendee_path(:occurrence_id => p.event.occurrences.next.id,:attendee_id => @user.find_attendee(p.event.occurrences.next).id)
           -if current_user.id == @user.id && !summary_submitted?(@user,p.event.occurrences.next)
-            %td.summary= link_to "Submit Event Summary", new_occurrence_attendee_path(:occurrence_id => p.event.occurrences.next.id)
-          
+            %td.summake= link_to "Submit Event Summary", new_occurrence_attendee_path(:occurrence_id => p.event.occurrences.next.id)
+    -#%div.hide=form_for  
 

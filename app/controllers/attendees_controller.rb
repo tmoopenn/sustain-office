@@ -32,10 +32,27 @@ class AttendeesController < ApplicationController
         redirect_to user_path(current_user) and return
     end
   end
+  
+  def edit
+     @event = @occurrence.event
+     @attendee = Attendee.where("id = ?", params[:attendee_id]).first
+  end
+
+  def update
+    @attendee = Attendee.where("id = ?", params[:id]).first
+    if @attendee.update(create_update_params)
+        flash[:notice] = "Summary successfully edited for \'#{@occurrence.event.title}\'"
+        redirect_to user_path(current_user)
+    else
+        flash[:warning] = "Failed to edit summary for \'#{@occurrence.event.tit;e}\'"
+        redirect_to edit_occurrence_attendee_path(@occurrence,@attendee)
+    end
+  end
+
 
   private
   def create_update_params
-    params.require(:attendee).permit(:summary)
+    params.require(:attendee).permit(:summary,:attendee_id)
   end
 
 end

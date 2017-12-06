@@ -1,11 +1,17 @@
 #main.container
   %h3.viewsummary Summary for Event #{@event.title}
+  
+  %h2 #{@event.title} Details
+  %div.event_details
+    %p Location: #{@event.location}
+    %p Points: #{@event.points}
+    %p Description: #{@event.description}
 
   %table.attendee_summary_table
     %thead
       %tr 
-        %th Description 
+        %th Summary Description 
 
     %tbody
       %td.sum_descript= "#{@attendee.summary}"
-      
+  %p=link_to "See Event Page", event_path(@event)    
