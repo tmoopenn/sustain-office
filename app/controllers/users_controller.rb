@@ -5,6 +5,12 @@ class UsersController < ApplicationController
         @user = User.find(id)
     end
 
+    def leaderboard
+      @champions = User.rank1
+      @advocates = User.rank2
+      @associates = User.rank3
+    end
+
     # def create
     #     user = User.new(create_update_params)
     #     if user.save

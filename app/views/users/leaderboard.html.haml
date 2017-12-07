@@ -1,0 +1,48 @@
+#main.container
+  %h3.tier1header Sustainability Champions:
+  %table.champions_table
+    %thead
+      %tr
+        %th Place
+        %th Name
+        %th Points
+
+    %tbody
+      -@champions.each_with_index do |u, index|
+        %tr
+          %td.place= "#{index + 1}"
+          %td.name= "#{u.name}"
+          %td.points= "#{u.points}"
+  %br
+
+  %h3.tier2header Sustainability Advocates:
+  %table.advocates_table
+    %thead
+      %tr
+        %th Place
+        %th Name
+        %th Points
+
+    %tbody
+      -@advocates.each_with_index do |u, index|
+        %tr
+          %td.place= "#{index + 1 + @champions.length}"
+          %td.name= "#{u.name}"
+          %td.points= "#{u.points}"
+  %br
+
+  %h3.tier3header Sustainability Associates:
+  %table.associates_table
+    %thead
+      %tr
+        %th Place
+        %th Name
+        %th Points
+
+    %tbody
+      -@associates.each_with_index do |u, index|
+        %tr
+          %td.place= "#{index + 1 + @champions.length + @advocates.length}"
+          %td.name= "#{u.name}"
+          %td.points= "#{u.points}"
+  %br
