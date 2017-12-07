@@ -26,4 +26,9 @@ class UsersController < ApplicationController
     # def create_update_params
     #   params.require(:user).permit(:name, :classification)
     # end
+
+    private
+    def create_update_params
+      params.require(:user).permit(:name, :classification, :tpoints)
+    end
 end
