@@ -42,9 +42,4 @@ Feature: Registering for an Event
             When I follow "Register for this Event"
             Then I should see "You are already registered for this event"
 
-      #  Scenario: Failing to register for an event
-      #      Given I am signed in with provider Google
-      #      Given I am on the events page
-      #      When I follow "Class 1"
-      #      When I follow "ATTEND THIS EVENT!" and registration fails
-      #      Then I should see "Failed to register for Class 1"
+       

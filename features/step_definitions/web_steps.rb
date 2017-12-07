@@ -289,6 +289,12 @@ Given(/these registrees:/) do |table|
   end
 end
 
+Given(/these attendees:/) do |table|
+    table.hashes.each do |h|
+        Attendee.create!(h)
+    end
+end
+
 When /^(?:|I )select "([^ ]*) ([^ ]*), ([^ ]*) ([^:]*):([^ ]*) ([^ ]*)" as the first datetime$/ do |month, day, year, hour, minute, ampm|
   number = 0
 
