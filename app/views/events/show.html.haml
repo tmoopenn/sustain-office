@@ -1,6 +1,7 @@
 #main.container
   %h3.header #{@event.title}
 
+  %td.image= image_tag @event.image.url(:thumb)
   %p.content Date and Time:
   - @event.occurrences.each do |occurence|
     %p.indent #{occurence.date_time.to_formatted_s(:custom_long_ordinal)}

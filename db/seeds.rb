@@ -18,9 +18,9 @@ occ2 = Occurrence.create!(date_time: "December 31, 2018, 1:00 PM", event_id: eve
 
 User.delete_all
 
-User.create!(name:"Vincent Van Gogh", classification:"faculty")
-User.create!(name:"Rick Taylor",classification:"student")
-arno = User.create!(name:"Arno Holt",classification: "faculty")
+User.create!(name:"Vincent Van Gogh", classification:"faculty", tpoints: 8)
+User.create!(name:"Rick Taylor",classification:"student",tpoints: 12 )
+arno = User.create!(name:"Arno Holt",classification: "faculty",tpoints: 16)
 
 Registree.delete_all
 

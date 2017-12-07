@@ -5,6 +5,11 @@ class User < ApplicationRecord
   has_many :events, :through => :registrees
   has_many :occurrences, :through => :attendees
 
+
+  scope :rank1, lambda { User.all.where('tpoints >= ?', 14).order("tpoints").reverse_order}
+  scope :rank2, lambda { where('tpoints >= ? AND tpoints < ?', 10, 14).order("tpoints").reverse_order}
+  scope :rank3, lambda { where('tpoints >= ? AND tpoints < ?', 6, 10).order("tpoints").reverse_order}
+
   def self.from_omniauth(access_token)
     data = access_token.info
     user = User.where(email: data['email']).first

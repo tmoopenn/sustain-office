@@ -1,0 +1,18 @@
+#main.container
+  %h3.header Users who Attended #{@occurrence.event.title}
+
+  %table.attendees_table
+    %thead
+      %tr
+        %th Name
+        %th Classification
+
+    %tbody
+      -@attendees.each do |p|
+        %tr.attendee
+          %td.name= link_to "#{p.user.name}", user_path(p.user)
+          -#TODO:need to add check or require it if going to capitalize
+          %td.classification= "#{p.user.classification}"
+
+
+  %p= link_to "Back to Event", event_path(@event)

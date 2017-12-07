@@ -33,4 +33,7 @@
       =f.label :description, 'Description'
       =f.text_field :description
     .field
+      =f.label :image, 'Image'
+      =f.file_field :image, accept: "image/png,image/gif,image/jpeg"
+    .field
       =f.submit 'Update event details'

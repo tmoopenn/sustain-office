@@ -94,7 +94,6 @@ class EventsController < ApplicationController
     @events_nonrecurring = Event.where(recurring: false)
   end
 
-
   private
   def create_update_params
     params.require(:event).permit(:title, :add_occurrence,
