@@ -38,4 +38,8 @@
       =f.text_field :description
 
     .field
+      =f.label :image, 'Image'
+      =f.file_field :image, accept: "image/png,image/gif,image/jpeg"
+
+    .field
       =f.submit 'Add this New Event'

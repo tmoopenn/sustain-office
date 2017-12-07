@@ -30,6 +30,7 @@ Feature: View an event
      Then I should see "October 30, 2018 04:30 PM"
      And I should see "Persson 108"
      And I should see "Recycling Class"
+     And I should see the image "noimg"
 
     Scenario: View Registrees of a specific event
      Given I am signed in with provider Google

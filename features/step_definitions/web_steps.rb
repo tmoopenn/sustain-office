@@ -110,6 +110,15 @@ Then /^(?:|I )should see "([^"]*)"$/ do |text|
   end
 end
 
+Then /^(?:|I )should see the image "([^']*)"$/ do |image|
+  image = all('.image')
+  image.each do |x|
+    if x.native.children[0].attributes["alt"].value.downcase ==  image
+      expect(x.native.children[0].attributes["alt"].value.downcase).to eq image
+    end
+  end
+end
+
 Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
   regexp = Regexp.new(regexp)
 
