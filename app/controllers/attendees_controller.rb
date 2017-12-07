@@ -16,8 +16,6 @@ class AttendeesController < ApplicationController
   end
 
   def new
-  # byebug
-   # @attendee = @occurrence.attendees.build(:user_id => current_user.id)
    @attendee = Attendee.new
   end
 
@@ -31,7 +29,7 @@ class AttendeesController < ApplicationController
         flash[:warning] = "Failed to create summary for \'#{@occurrence.event.title}\'"
         redirect_to user_path(current_user) and return
     end
-    @attendee.user.update_attribute(:tpoints,@attendee.user.tpoints + @occurrence.event.points)
+    @attendee.user.update_attribute(:tpoints,@attendee.user.tpoints+@occurrence.event.points)
   end
 
   def edit

@@ -5,6 +5,10 @@ class UsersController < ApplicationController
         @user = User.find(id)
     end
 
+    def index
+
+    end
+
     def leaderboard
       @champions = User.rank1
       @advocates = User.rank2
