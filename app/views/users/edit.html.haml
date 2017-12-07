@@ -1,0 +1,13 @@
+#main.container.form-page
+  %h1 Edit your profile
+  =form_for @user, :method => :patch do |f|
+    .field
+      =f.label :name, 'Name'
+      =f.text_field :name
+
+    .field
+      =f.label :classification, 'What do you do at Colgate?'
+      =f.select :classification, options_for_select(@classifications, @user.classification) 
+
+    .field
+      =f.submit 'Update user profile'

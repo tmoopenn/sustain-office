@@ -1,9 +1,17 @@
 #main.container
-  %h3.profileheader #{@user.name}
+  -if @user.admin
+    %span.small-text-span Admin
+  %h2.profileheader #{@user.name}
   %p.profilecontent Email Address: #{@user.email}
-  -#TODO need to add check or require it if going to capitalize
-  -#%p.profilecontent Classification: #{@user.classification.capitalize}
+  %p.profilecontent Classification: #{@user.classification}
   %p.profilecontent Points Earned: #{@user.tpoints}
+  -if @signed_in
+    %p.profilecontent= link_to "Edit profile", edit_user_path(@user)
+  -if current_user.admin && !@user.admin
+    =form_for @user, :method => :patch do |f|
+      =f.radio_button :admin, true, :checked => true
+      =f.submit "Add user as admin"
+
 
   %h3.header Events Registered For:
 
@@ -21,10 +29,9 @@
           %td.date_time= "#{p.event.occurrences.next.date_time.try(:to_formatted_s, :custom_long_ordinal)}"
           %td.location= "#{p.event.location}"
           -#%td.delete= link_to "Cancel attending this event", event_participant_path(p.event,p)
-          -if current_user.id == @user.id && summary_submitted?(@user,p.event.occurrences.next)
+          -if @signed_in && summary_submitted?(@user,p.event.occurrences.next)
             %td.summary= link_to "View Event Summary", occurrence_attendee_path(:occurrence_id => p.event.occurrences.next.id,:attendee_id =>@user.find_attendee(p.event.occurrences.next).id)
             %td.sumedit= link_to "Edit Event Summary", edit_occurrence_attendee_path(:occurrence_id => p.event.occurrences.next.id,:attendee_id => @user.find_attendee(p.event.occurrences.next).id)
-          -if current_user.id == @user.id && !summary_submitted?(@user,p.event.occurrences.next)
+          -if @signed_in && !summary_submitted?(@user,p.event.occurrences.next)
             %td.summake= link_to "Submit Event Summary", new_occurrence_attendee_path(:occurrence_id => p.event.occurrences.next.id)
-    -#%div.hide=form_for  
-
+    -#%div.hide=form_for
