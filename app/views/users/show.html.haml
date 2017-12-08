@@ -1,8 +1,13 @@
 #main.container
   -if @user.admin
     %span.small-text-span Admin
+<<<<<<< HEAD
+  %td.image-responsive= image_tag @user.image.url
+  %h2.profileheader #{@user.name}
+=======
   %td.image= image_tag @user.image.url
   %h2.strong #{@user.name}
+>>>>>>> 301ebfe0f9766f9beea861e8024897b05a7333f4
   .row
     %strong.col-sm-3 Email Address: #{@user.email}
     %strong.col-sm-3 Classification: #{@user.classification}
