@@ -42,6 +42,7 @@ body{
   font-family:Garamond, Georgia, serif;
   background-color: $color-background-0;
   margin-bottom: 100px;
+  margin-top: 10px;
 
 
   .sign_in {
@@ -54,14 +55,11 @@ body{
   .title{
     color: #4C7401;
     line-height: 100%;
+    text-align: center;
   }
   .navbar{
-      border-bottom: 1px solid grey;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-      padding-right: 5vw;
+      margin: 0 20px;
+      border-radius: 5px;
   }
 
   .main {
