@@ -1,6 +1,6 @@
 #main.container
   %h1.header #{@event.title}
-  %td.image= image_tag @event.image.url(:thumb)
+  %td.image= image_tag @event.image.url
   %h5.dl
     %h5.dl Date and Time:
   - @event.occurrences.each do |occurence|
