@@ -1,7 +1,7 @@
 #main.container
   %h3.header Upcoming Events:
 
-  -if check_admin
+  -if check_admin 
     %div
       %t= link_to "Add New Event", new_event_path
       %t= link_to "View All Users", users_path
