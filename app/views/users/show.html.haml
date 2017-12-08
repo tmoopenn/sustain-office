@@ -1,7 +1,7 @@
 #main.container
   -if @user.admin
     %span.small-text-span Admin
-  %td.image= image_tag @user.image.url
+  %td.image-responsive= image_tag @user.image.url
   %h2.profileheader #{@user.name}
   .row
     %p.col-sm-3 Email Address: #{@user.email}
