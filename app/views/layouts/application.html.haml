@@ -31,19 +31,11 @@
         -if flash[:alert]
           .alert.alert-warning= flash[:alert]
     = yield
-<<<<<<< HEAD
     %footer.navbar.navbar-fixed-bottom
       %div.footer
         %f.main Colgate Sustainability Passport Program
         %br
         %f= link_to "Home", events_path, {:class => "text-white"}
-=======
-    %footer
-      %div.footer.p-3.mb-2.footer-green.text-white
-        %f.main Colgate Sustainability Passport Program
-        %br
-        %f.text-muted= link_to "Home", events_path
->>>>>>> 9ca836f5dda1f9d19e8da149c1f791a1400fa685
         %br
         %f= link_to "About Us", about_path, {:class => "text-white"}
         %br
