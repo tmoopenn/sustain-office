@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Sustain
+    %title Colgate Sustainability Passport Program
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -16,7 +16,7 @@
       %t= link_to "Events", events_path
       %t= link_to "All Events", all_path
       %t= link_to "Leaderboard", leaderboard_path
-      %t= link_to "About", about_path
+      %t= link_to "About the Program", about_path
       -if user_signed_in?
         %t.name= link_to "#{current_user.name}", user_path(current_user)
         %t.sign_out= link_to "Sign out", destroy_user_session_path, :method => :delete
