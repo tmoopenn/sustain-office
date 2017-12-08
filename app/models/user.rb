@@ -5,6 +5,10 @@ class User < ApplicationRecord
   has_many :events, :through => :registrees
   has_many :occurrences, :through => :attendees
 
+  has_attached_file :image, :styles=> {:medium => "300x300>", :thumb => "100x100>" }, :default_url => "no_photo.png"
+  validates_attachment :image, :content_type => {:content_type => ["image/jpeg", "image/png", "image/gif"]}
+
+
 
   scope :rank1, lambda { User.all.where('tpoints >= ?', 14).order("tpoints").reverse_order}
   scope :rank2, lambda { where('tpoints >= ? AND tpoints < ?', 10, 14).order("tpoints").reverse_order}

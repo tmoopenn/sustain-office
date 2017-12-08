@@ -58,6 +58,6 @@ class UsersController < ApplicationController
   #
   private
   def create_update_params
-    params.require(:user).permit(:name, :classification, :admin)
+    params.require(:user).permit(:name, :classification, :admin, :image)
   end
 end
