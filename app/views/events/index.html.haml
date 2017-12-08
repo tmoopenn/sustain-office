@@ -1,10 +1,10 @@
 #main.container
   %h3 Upcoming Events:
 
-  -if check_admin 
+  -if check_admin
     %div
-      %t= link_to "Add New Event", new_event_path
-      %t= link_to "View All Users", users_path
+    %t= link_to "Add New Event", new_event_path
+    %t= link_to "View All Users", users_path
 
   %h4 Recurring Events:
   %table.table.table-responsive.table-bordered

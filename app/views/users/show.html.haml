@@ -14,12 +14,14 @@
 
 
   %h3.header Events Registered For:
-  %table.registrees_table
-    %thead
+  %table.table.table-responsive.table-bordered
+    %thead.thead-light
       %tr
         %th Title
         %th DateTime
         %th Location
+        -if @signed_in
+          %th Summary
     %tbody
       -@user.registrees.each do |p|
         %tr.registree
@@ -27,15 +29,19 @@
             %td.title= link_to "#{p.event.title}", event_path(p.event)
             %td.date_time= "#{p.event.occurrences.next.date_time.try(:to_formatted_s, :custom_long_ordinal)}"
             %td.location= "#{p.event.location}"
-            %td.summake= link_to "Submit Event Summary", new_occurrence_attendee_path(:occurrence_id => p.event.occurrences.next.id)
+            -if @signed_in
+              %td.summake= link_to "Submit Event Summary", new_occurrence_attendee_path(:occurrence_id => p.event.occurrences.next.id)
   -if @signed_in || check_admin
     %h3.header Events Attended:
-    %table.attendees_table
-      %thead
+    %table.table.table-responsive.table-bordered
+      %thead.thead-light
         %tr
           %th Title
           %th DateTime
           %th Location
+          %th View Summary
+          -if @signed_in
+            %th Edit Summary
       %tbody
         -@user.registrees.each do |p|
           %tr.registree
@@ -44,4 +50,5 @@
               %td.date_time= "#{p.event.occurrences.next.date_time.try(:to_formatted_s, :custom_long_ordinal)}"
               %td.location= "#{p.event.location}"
               %td.summary= link_to "View Event Summary", occurrence_attendee_path(:occurrence_id => p.event.occurrences.next.id,:attendee_id =>@user.find_attendee(p.event.occurrences.next).id)
-              %td.sumedit= link_to "Edit Event Summary", edit_occurrence_attendee_path(:occurrence_id => p.event.occurrences.next.id,:attendee_id => @user.find_attendee(p.event.occurrences.next).id)
+              -if @signed_in
+                %td.sumedit= link_to "Edit Event Summary", edit_occurrence_attendee_path(:occurrence_id => p.event.occurrences.next.id,:attendee_id => @user.find_attendee(p.event.occurrences.next).id)
