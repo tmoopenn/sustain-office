@@ -2,13 +2,13 @@
   -if @user.admin
     %span.small-text-span Admin
   %td.image= image_tag @user.image.url
-  %h2.profileheader #{@user.name}
+  %h2.strong #{@user.name}
   .row
-    %p.col-sm-3 Email Address: #{@user.email}
-    %p.col-sm-3 Classification: #{@user.classification}
-    %p.col-sm-3 Points Earned: #{@user.tpoints}
+    %strong.col-sm-3 Email Address: #{@user.email}
+    %strong.col-sm-3 Classification: #{@user.classification}
+    %strong.col-sm-3 Points Earned: #{@user.tpoints}
     -if @signed_in
-      %p.col-sm-3= link_to "Edit profile", edit_user_path(@user)
+      %strong.col-sm-3= link_to "Edit profile", edit_user_path(@user)
   -if current_user.admin && !@user.admin
     =form_for @user, :method => :patch do |f|
       =f.radio_button :admin, true, :checked => true
