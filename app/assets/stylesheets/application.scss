@@ -30,6 +30,8 @@
 
 .fixed-bottom {
   position: fixed-bottom;
+  padding: 0px;
+  margin-top: 10px;
 }
 
 .green-background {
@@ -67,9 +69,6 @@ body{
     font-style: normal;
   }
 
-  .container{
-      padding: 0 20px;
-  }
 
 
     .field {
