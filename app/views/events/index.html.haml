@@ -7,8 +7,8 @@
       %t= link_to "View All Users", users_path
 
 
-  %h3.recurringheader Recurring Events:
-  %table.recurring_events_table
+  %h4.recurringheader Recurring Events:
+  %table.recurring_events_table.table.table-responsive-lg
     %thead
       %tr.eventheaders
         %th Title
@@ -26,8 +26,8 @@
           %td.points= "#{event.points}"
           %td.description= truncate(event.description, length: 60)
   %br
-  %h3.recurringheader Non-recurring Events:
-  %table.nonrecurring_events_table
+  %h4.recurringheader Non-recurring Events:
+  %table.nonrecurring_events_table.table.table-responsive-lg
     %thead
       %tr.eventheaders
         %th Title
