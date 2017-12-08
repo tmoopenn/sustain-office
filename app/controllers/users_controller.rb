@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       redirect_to action: "show", id: id
     end
     @user = User.find(id)
-    @classifications = [["Student", "Student"], ["Factulty", "Factulty"], ["Staff", "Staff"]]
+    @classifications = [["Student", "Student"], ["Faculty", "Faculty"], ["Staff", "Staff"]]
   end
 
   def leaderboard
