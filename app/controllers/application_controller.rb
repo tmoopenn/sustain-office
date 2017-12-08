@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   private
   def check_profile
+   # byebug
     if user_signed_in? && current_user.classification.nil?
       flash[:notice] = "Tell us more about you..."
       redirect_to edit_user_path(current_user)

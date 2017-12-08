@@ -349,6 +349,8 @@ Given /^I am signed in with provider Google$/ do
     # etc.
     })
     visit "/users/auth/google_oauth2"
+    select("Faculty",:from => "What do you do at Colgate?")
+    click_button("Update user profile")
 end
 
 Given("I have a profile") do
@@ -359,6 +361,11 @@ Given("I have a profile") do
   :info => {"name"=>"Oauth Tester", "email"=>"oauthtest@gmail.com"}
   # etc.
   })
+end
+
+And("I have filled in all my information") do
+ select("Faculty", :from => "What do you do at Colgate?")
+ click_button("Update user profile")
 end
 
 Given("I do not have a profile") do
