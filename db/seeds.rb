@@ -38,7 +38,7 @@ User.delete_all
 
 joel = User.create!(name:"Joel Sommers", classification:"faculty", tpoints: 8, image: seed_image('joel.jpeg'))
 phil = User.create!(name:"Phil Mulry",classification:"faculty",tpoints: 3)
-aaron = User.create!(name:"Aaron Gember-Jacobson",classification: "faculty",tpoints: 16, image: seed_image('aaron.jpeg'))
+aaron = User.create!(name:"Aaron Gember-Jacobson",classification: "faculty",tpoints: 16)
 troy = User.create!(name:"Troy Moo Penn", classification: "student", tpoints: 10, image: seed_image('troy.jpeg'))
 char = User.create!(name:"Char Jablonski", classification: "faculty", tpoints: 20)
 jesse = User.create!(name:"Jesse O'Loughlin", classification: "student", tpoints: 6, image: seed_image('jesse.jpeg'))
