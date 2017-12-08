@@ -23,6 +23,10 @@ class UsersController < ApplicationController
     @associates = User.rank3
   end
 
+  def index
+    @users = User.all
+  end
+
   def update
     id = params[:id]
     @user = User.find(id)

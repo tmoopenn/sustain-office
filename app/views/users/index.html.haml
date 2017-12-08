@@ -1,0 +1,18 @@
+#main.container
+  %h3.allusersheader All Users:
+
+  %table.users
+    %thead
+      %tr.headers
+        %th Name
+        %th Email
+        %th Classification
+        %th Total Points Earned
+
+    %tbody
+      -@users.each do |u|
+        %tr.eventbody
+          %td= link_to "#{u.name}", user_path(u)
+          %td= "#{u.email}"
+          %td= "#{u.classification}"
+          %td= "#{u.tpoints}"

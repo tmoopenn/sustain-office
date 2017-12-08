@@ -11,7 +11,7 @@
   %p.content About #{@event.title}: #{@event.description}
 
   %p=link_to 'Register for this Event', event_registrees_path(@event),:method => :post
-  %p=link_to 'Edit event details', edit_event_path(@event)
-  %p=link_to 'Delete event', event_path(@event), :method => :delete
-
+  -if check_admin
+    %p=link_to 'Edit event details', edit_event_path(@event)
+    %p=link_to 'Delete event', event_path(@event), :method => :delete
   %p=link_to "View Registrees", event_registrees_path(@event)
