@@ -27,6 +27,11 @@
      font-weight: 200;
      font-style: normal;
 }
+
+.sticky {
+  position: sticky;
+}
+
 body{
   font-family:Garamond, Georgia, serif;
   background-color: $color-background-0;
