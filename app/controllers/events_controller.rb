@@ -97,7 +97,7 @@ class EventsController < ApplicationController
   private
   def create_update_params
     params.require(:event).permit(:title, :add_occurrence,
-      :remove_occurrence, :location, :recurring, :points, :description,
+      :remove_occurrence, :location, :recurring, :points, :image, :description,
       :occurrences_attributes => [:id, :date_time, :_destroy])
   end
 
