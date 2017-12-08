@@ -23,6 +23,9 @@ class UsersController < ApplicationController
     @associates = User.rank3
   end
 
+  def contact
+  end
+
   def index
     @users = User.all
   end
