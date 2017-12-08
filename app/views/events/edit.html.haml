@@ -1,12 +1,12 @@
-#main.container.form-page
+#main.container
   %h3.header Edit an Existing Event!
 
   =form_for @event, :method => :patch  do |f|
-    .field
+    .form-group
       =f.label :title, 'Title'
-      =f.text_field :title
+      =f.text_field :title, class: "form-control"
 
-    .field
+    .form-group
       =f.fields_for :occurrences, @occurrences do |x|
         %p.select-date
           =x.datetime_select :date_time, ampm: true, discard_seconds: true
@@ -14,13 +14,13 @@
             =x.check_box :_destroy
           =x.label :_destroy, 'Delete'
 
-    .field
-      =f.submit 'Add another occurrence', :name => "add_occurrence"
-      =f.submit 'Delete checked occurrences', :name => "remove_occurrence"
+    .form-group
+      =f.submit 'Add another occurrence', :name => "add_occurrence",class: "btn-primary"
+      =f.submit 'Delete checked occurrences', :name => "remove_occurrence",class: "btn-primary"
 
-    .field
+    .form-group
       =f.label :location, 'Location'
-      =f.text_field :location
+      =f.text_field :location, class: "form-control"
 
     .field
       %div
@@ -28,12 +28,12 @@
         =f.check_box :recurring
     .field
       =f.label :points, 'Points Value'
-      =f.number_field :points
+      =f.number_field :points, class: "form-control"
     .field
       =f.label :description, 'Description'
-      =f.text_field :description
+      =f.text_field :description, class: "form-control"
     .field
       =f.label :image, 'Image'
       =f.file_field :image, accept: "image/png,image/gif,image/jpeg"
     .field
-      =f.submit 'Update event details'
+      =f.submit 'Update event details',class:"btn-success"
