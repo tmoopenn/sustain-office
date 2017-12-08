@@ -31,7 +31,7 @@
 .fixed-bottom {
   position: fixed-bottom;
   padding: 0px;
-  margin-top: 10px;
+  clear: both;
 }
 
 .green-background {
@@ -41,6 +41,8 @@
 body{
   font-family:Garamond, Georgia, serif;
   background-color: $color-background-0;
+  margin-bottom: 100px;
+
 
   .sign_in {
     color: #022015;
@@ -68,8 +70,6 @@ body{
     font-weight: 200;
     font-style: normal;
   }
-
-
 
     .field {
         display: flex;
