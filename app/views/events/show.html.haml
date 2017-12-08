@@ -1,17 +1,18 @@
 #main.container
-  %h3.header #{@event.title}
-
+  %h1.header #{@event.title}
   %td.image= image_tag @event.image.url(:thumb)
-  %p.content Date and Time:
+  %h5.dl
+    %h5.dl Date and Time:
   - @event.occurrences.each do |occurence|
-    %p.indent #{occurence.date_time.to_formatted_s(:custom_long_ordinal)}
-  %p.content Location: #{@event.location}
-  %p.content Recurring Event? #{@event.recurring ? "Yes" : "No"}
-  %p.content Points Value: #{@event.points}
-  %p.content About #{@event.title}: #{@event.description}
+    %h6.dd #{occurence.date_time.to_formatted_s(:custom_long_ordinal)}
+  %h5.dl Location: #{@event.location}
+  %h5.dl Recurring Event? #{@event.recurring ? "Yes" : "No"}
+  %h5.dl Points Value: #{@event.points}
+  %h5.dl About #{@event.title}:
+  %h6.dd #{@event.description}
 
   %p=link_to 'Register for this Event', event_registrees_path(@event),:method => :post
+  %p=link_to "View Registrees", event_registrees_path(@event)
   -if check_admin
     %p=link_to 'Edit event details', edit_event_path(@event)
     %p=link_to 'Delete event', event_path(@event), :method => :delete
-  %p=link_to "View Registrees", event_registrees_path(@event)

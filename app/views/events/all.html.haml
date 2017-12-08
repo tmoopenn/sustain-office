@@ -1,10 +1,10 @@
 #main.container
-  %h3.header All Events:
+  %h3 All Events:
 
-  %h3.recurringheader Recurring Events:
-  %table.recurring_events_table
-    %thead
-      %tr.eventheaders
+  %h4 Recurring Events:
+  %table.table.table-responsive.table-bordered
+    %thead.thead-light
+      %tr
         %th Title
         %th Date and Time
         %th Location
@@ -13,17 +13,17 @@
 
     %tbody
       -@events_recurring.each do |event|
-        %tr.eventbody
+        %tr
           %td.title= link_to "#{event.title}", event_path(event)
           %td.date_time= "#{event.occurrences.first.date_time.try(:to_formatted_s, :custom_long_ordinal)}"
           %td.location= "#{event.location}"
           %td.points= "#{event.points}"
           %td.description= truncate(event.description, length: 60)
   %br
-  %h3.recurringheader Non-recurring Events:
-  %table.nonrecurring_events_table
-    %thead
-      %tr.eventheaders
+  %h4 Non-recurring Events:
+  %table.table.table-responsive-lg.table-bordered
+    %thead.thead-light
+      %tr
         %th Title
         %th Date and Time
         %th Location

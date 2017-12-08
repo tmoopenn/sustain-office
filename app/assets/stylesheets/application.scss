@@ -27,6 +27,17 @@
      font-weight: 200;
      font-style: normal;
 }
+
+.fixed-bottom {
+  position: fixed-bottom;
+  padding: 0px;
+  margin-top: 10px;
+}
+
+.green-background {
+  background-color: #4C7401;
+}
+
 body{
   font-family:Garamond, Georgia, serif;
   background-color: $color-background-0;
@@ -50,9 +61,14 @@ body{
       margin-bottom: 20px;
       padding-right: 5vw;
   }
-  .container{
-      padding: 0 20px;
+
+  .main {
+    font-family:Garamond, Georgia, serif;
+    font-size: 24px;
+    font-weight: 200;
+    font-style: normal;
   }
+
 
 
     .field {
