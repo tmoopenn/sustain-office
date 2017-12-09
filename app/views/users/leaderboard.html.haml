@@ -1,48 +1,48 @@
 #main.container
   %h3.tierheader Sustainability Champions: <small>(14+ Points)</small>
-  %table.champions_table.table
-    %thead
+  %table.table.table-responsive.table-bordered
+    %thead.thead-light
       %tr
-        %th{:style => "width: 20%"} Rank
-        %th{:style => "width: 60%"} Name
-        %th{:style => "width: 20%"} Points
+        %th Rank
+        %th Name
+        %th Points
 
     %tbody
       -@champions.each_with_index do |u, index|
         %tr
           %td.place= "#{(index + 1).to_s + "."}"
-          %td.name= "#{u.name}"
+          %td.name= link_to "#{u.name}", user_path(u)
           %td.points= "#{u.tpoints}"
   %br
 
   %h3.tierheader Sustainability Advocates: <small>(10-13 Points)</small>
-  %table.advocates_table.table
-    %thead
+  %table.table.table-responsive.table-bordered
+    %thead.thead-light
       %tr
-        %th{:style => "width: 20%"} Rank
-        %th{:style => "width: 60%"} Name
-        %th{:style => "width: 20%"} Points
+        %th Rank
+        %th Name
+        %th Points
 
     %tbody
       -@advocates.each_with_index do |u, index|
         %tr
-          %td.place= "#{(index + 1 + @champions.length).to_s + "."}"
-          %td.name= "#{u.name}"
+          %td.place= "#{(index + 1).to_s + "."}"
+          %td.name= link_to "#{u.name}", user_path(u)
           %td.points= "#{u.tpoints}"
   %br
 
   %h3.tierheader Sustainability Associates: <small>(6-9 Points)</small>
-  %table.associates_table.table
-    %thead
+  %table.table.table-responsive.table-bordered
+    %thead.thead-light
       %tr
-        %th{:style => "width: 20%"} Rank
-        %th{:style => "width: 60%"} Name
-        %th{:style => "width: 20%"} Points
+        %th Rank
+        %th Name
+        %th Points
 
     %tbody
       -@associates.each_with_index do |u, index|
         %tr
-          %td.place= "#{(index + 1 + @champions.length + @advocates.length).to_s + "."}"
-          %td.name= "#{u.name}"
+          %td.place= "#{(index + 1).to_s + "."}"
+          %td.name= link_to "#{u.name}", user_path(u)
           %td.points= "#{u.tpoints}"
   %br

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171207031254) do
+ActiveRecord::Schema.define(version: 20171208043858) do
 
   create_table "attendees", force: :cascade do |t|
     t.integer "user_id"
@@ -59,6 +59,10 @@ ActiveRecord::Schema.define(version: 20171207031254) do
     t.string "email"
     t.string "password"
     t.integer "tpoints", default: 0
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
   end
 
 end

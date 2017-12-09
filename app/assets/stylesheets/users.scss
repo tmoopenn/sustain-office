@@ -31,27 +31,6 @@ body{
     @include fonty(15pt);
   }
 
-  .champions_table, .associates_table, .advocates_table{
-    position: static;
-    top: 10px;
-    width: 90%;
-    left: 10%;
-    color: #2d2d2d;
-    padding: 3px;
-    margin-bottom: 20px;
-    text-align: left;
-    @include fonty(15pt);
-  }
-
-  .champions_table{
-    background-color: #ffeb8a;
-  }
-  .advocates_table{
-    background-color: #e7e6e4;
-  }
-  .associates_table{
-    background-color: #f2d8ac;
-  }
 
 
   .profileheader{

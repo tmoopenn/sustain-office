@@ -5,6 +5,6 @@ Feature: View "About" Page
 
     Scenario: View the About Page
     Given I am on the events page
-    When I follow "About"
+    When I follow "About the Program"
     Then I should be on the about page
     And I should see "About the Program"
