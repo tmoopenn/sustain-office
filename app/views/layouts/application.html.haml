@@ -3,7 +3,6 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Colgate Sustainability Passport Program
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
@@ -13,7 +12,7 @@
     %h3.title Colgate Sustainability Passport Program
     %div.navbar.navbar-light.bg-light
       %a.navbar-brand{ :href => events_path}= image_tag("sus_logo.jpg", :height => 50)
-      .nav-link= link_to "Events", events_path
+      = link_to "Events", events_path, class: "nav-link nav-item"
       .nav-link= link_to "All Events", all_path
       .nav-link= link_to "Leaderboard", leaderboard_path
       .nav-link= link_to "About the Program", about_path
@@ -40,7 +39,3 @@
         %f= link_to "About Us", about_path, {:class => "text-white"}
         %f.text-white •
         %f= link_to "Contact Us", contact_path, {:class => "text-white"}
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>

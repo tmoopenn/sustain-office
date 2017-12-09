@@ -353,6 +353,12 @@ Given /^I am signed in with provider Google$/ do
     click_button("Update user profile")
 end
 
+Given /^I am an admin$/ do
+  user = User.find_by(name: 'Oauth Tester')
+  user.admin = true
+  user.save
+end
+
 Given("I have a profile") do
   OmniAuth.config.test_mode = true
   OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
