@@ -21,6 +21,8 @@ Feature: Edit an event
             | 1        | October 19, 2019 8:00 PM |
 
     Scenario: Update the details of a specific event
+     Given I am signed in with provider Google
+     Given I am an admin
      Given I am on the events page
      When I follow "Class 1"
      Then I should see "October 30, 2018 04:30 PM"
@@ -34,6 +36,8 @@ Feature: Edit an event
      And I should see "Ho 101"
 
    Scenario: Incorrectly update the details of a specific event
+    Given I am signed in with provider Google
+    Given I am an admin
     Given I am on the events page
     When I follow "Class 1"
     Then I should see "October 30, 2018 04:30 PM"
@@ -45,6 +49,8 @@ Feature: Edit an event
     Then I should see "Error updating event"
 
   Scenario: Delete an event
+   Given I am signed in with provider Google
+   Given I am an admin
    Given I am on the events page
    When I follow "Class 1"
    Then I should see "October 30, 2018 04:30 PM"
@@ -53,6 +59,8 @@ Feature: Edit an event
    And I should see "Event Class 1 deleted"
 
   Scenario: Delete an occurrence of an event
+    Given I am signed in with provider Google
+    Given I am an admin
     Given I am on the events page
     When I follow "Class 1"
     When I follow "Edit event details"
@@ -64,6 +72,8 @@ Feature: Edit an event
     Then I should not see "October 19, 2019 8:00 PM"
 
   Scenario: Add an occurrence to an event
+    Given I am signed in with provider Google
+    Given I am an admin
     Given I am on the events page
     When I follow "Class 1"
     When I follow "Edit event details"
