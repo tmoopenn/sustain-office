@@ -39,3 +39,18 @@ Feature: Logging Participation in an Event
         Then I should see "Add an Event Summary for Class 1"
         When I fill in "Summary" with "whats up"
         And I press "Submit this summary"
+
+    Scenario: Incorrectly submitting a summary for an event
+        Given I am signed in with provider Google 
+        Given I am on the home page
+        When I follow "Class 1"
+        Then I follow "Register for this Event"
+        Then I should see "You are now registered for the event Class 1"
+        When I click on my name
+        Then I should see my profile
+        When I follow "Submit Event Summary"
+        Then I should see "Add an Event Summary for Class 1"
+        When I fill in "Summary" with ""
+        And I press "Submit this summary"
+        Then I should see "Failed to create summary for 'Class 1'"
+

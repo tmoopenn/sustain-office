@@ -7,7 +7,7 @@ class RegistreesController < ApplicationController
       #      redirect_to events_path(@event)
       #  end
         unless (@event = Event.where(:id => params[:event_id]).first)
-            flash[:warning] = "Event must exist to have registrees"
+            flash[:error] = "Event must exist to have registrees"
             redirect_to events_path
         end
 
@@ -34,7 +34,7 @@ class RegistreesController < ApplicationController
             if current_user.registrees << @event.registrees.build
                 flash[:notice] = "You are now registered for the event #{@event.title}!"
             else
-                flash[:warning] = "Failed to register for #{@event.title}"
+                flash[:error] = "Failed to register for #{@event.title}"
             end
             redirect_to event_path(@event)
         end

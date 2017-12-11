@@ -4,4 +4,5 @@ class Attendee < ApplicationRecord
 
     validates :occurrence_id, :presence => true
     validates :user_id, :presence => true
+    validates :summary, :presence => true
 end
