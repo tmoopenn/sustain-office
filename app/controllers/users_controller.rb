@@ -45,17 +45,7 @@ class UsersController < ApplicationController
       end
     end
   end
-  # def create
-  #     user = User.new(create_update_params)
-  #     if user.save
-  #         flash[:notice] = "New user \'#{user.name}\' created"
-  #         redirect_to events_path
-  #     else
-  #         flash[:error] = "Error in creating user"
-  #         redirect_to new_user_path
-  #     end
-  # end
-  #
+
   private
   def create_update_params
     params.require(:user).permit(:name, :classification, :admin, :image)
