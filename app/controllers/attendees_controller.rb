@@ -3,7 +3,7 @@ class AttendeesController < ApplicationController
   protected
   def has_occurrence
       unless (@occurrence = Occurrence.where("id =?", params[:occurrence_id]).first)
-          flash[:warning] = "Occurrence must exist to have registrees"
+          flash[:error] = "Occurrence must exist to have attendees"
           redirect_to occurrences_path
       end
   end
@@ -26,7 +26,7 @@ class AttendeesController < ApplicationController
         flash[:notice] = "Summary created for \'#{@occurrence.event.title}\'"
         redirect_to user_path(current_user)
     else
-        flash[:warning] = "Failed to create summary for \'#{@occurrence.event.title}\'"
+        flash[:error] = "Failed to create summary for \'#{@occurrence.event.title}\'"
         redirect_to user_path(current_user) and return
     end
     @attendee.user.update_attribute(:tpoints,@attendee.user.tpoints+@occurrence.event.points)

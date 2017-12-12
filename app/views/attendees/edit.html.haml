@@ -1,11 +1,10 @@
 #main.container.form-page
-  %h3.header Edit an Existing Summary!
+  %h3.header Edit an Existing Summary for #{@occurrence.event.title}
 
   =form_for @attendee, :url => occurrence_attendee_path(@occurrence,@attendee, :id => @attendee.id), :method=> :patch do |f|
     .field
       =f.label :summary, 'Summary'
       =f.text_field :summary
-        
-    .field
-      =f.submit 'Submit this summary'
 
+    .field
+      =f.submit 'Edit this summary'
