@@ -33,18 +33,21 @@ class AttendeesController < ApplicationController
   end
 
   def edit
+    #byebug
      @event = @occurrence.event
      @attendee = Attendee.where("id = ?", params[:attendee_id]).first
   end
 
   def update
+    #byebug
     @attendee = Attendee.where("id = ?", params[:id]).first
     if @attendee.update(create_update_params)
         flash[:notice] = "Summary successfully edited for \'#{@occurrence.event.title}\'"
         redirect_to user_path(current_user)
     else
-        flash[:warning] = "Failed to edit summary for \'#{@occurrence.event.title}\'"
-        redirect_to edit_occurrence_attendee_path(@occurrence,@attendee)
+        flash[:error] = "Failed to edit summary for \'#{@occurrence.event.title}\'"
+        #redirect_to edit_occurrence_attendee_path(@occurrence,@attendee,:id => @attendee.id)
+        redirect_to user_path(current_user)
     end
   end
 
