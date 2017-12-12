@@ -9,7 +9,7 @@
     %strong.col-sm-3 Points Earned: #{@user.tpoints}
     -if @signed_in
       %strong.col-sm-3= link_to "Edit profile", edit_user_path(@user)
-  -if current_user.admin && !@user.admin
+  -if current_user != nil && current_user.admin && !@user.admin
     =form_for @user, :method => :patch do |f|
       =f.radio_button :admin, true, :checked => true
       =f.submit "Add user as admin"

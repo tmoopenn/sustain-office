@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def show
       id = params[:id]
       @user = User.find(id)
-      @signed_in = current_user.id == @user.id.to_i
+      @signed_in = current_user == nil ? false : current_user.id == @user.id.to_i
   end
 
   def edit
