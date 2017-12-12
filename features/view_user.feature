@@ -26,6 +26,7 @@ Feature: View a user
 
   Scenario: View details of an event's registree
     Given I am signed in with provider Google
+    And I am an admin
     Given I am on the events page
     When I follow "Class 1"
     When I follow "View Registrees"
@@ -34,3 +35,11 @@ Feature: View a user
     And I should see "Events Registered For:"
     And I should see "Class 1"
     And I should see "Non-recurring 1"
+
+Scenario: View all Users
+    Given I am signed in with provider Google
+    And I am an admin
+    Given I am on the events page
+    When I follow "View All Users"
+    Then I should see "All Users:"
+    And I should see "John Cane"
